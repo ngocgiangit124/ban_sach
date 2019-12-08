@@ -3,6 +3,9 @@
    Trang chủ
 @stop
 @section('css')
+    <style type="text/css">
+
+    </style>
 @stop
 @section('slider')
     <section class="revolution_slider">
@@ -21,12 +24,12 @@
                 @foreach($slides as $slide)
                     <li class="f_left" data-transition="cube" data-slotamount="7" data-custom-thumb="/front/images/slide_01.jpg">
                         <img src="{{$slide['Photos']['Large']}}" alt="" data-bgrepeat="no-repeat" data-bgfit="cover" data-bgposition="center center">
-                        <div class="caption lft ltb f_size_large tt_uppercase slider_title_3 scheme_color" data-x="264" data-y="126" data-speed="300" data-start="1700">New arrivals</div>
-                        <div class="caption sfb stt slider_divider type_2" data-x="298" data-y="153" data-speed="400" data-start="1700"></div>
-                        <div class="caption lft ltb color_light slider_title tt_uppercase t_align_c" data-x="95" data-y="170" data-speed="500" data-easing="ease" data-start="1400"><b><span class="scheme_color">Spring/Summer 2014</span><br><span class="color_dark">Ready-To-Wear</span></b></div>
-                        <div class="caption lfb ltt color_light" data-x="206" data-y="318" data-speed="500" data-start="1700">
-                            <a href="#" role="button" class="button_type_4 bg_scheme_color color_light r_corners tt_uppercase">View Collection</a>
-                        </div>
+                        {{--<div class="caption lft ltb f_size_large tt_uppercase slider_title_3 scheme_color" data-x="264" data-y="126" data-speed="300" data-start="1700">New arrivals</div>--}}
+                        {{--<div class="caption sfb stt slider_divider type_2" data-x="298" data-y="153" data-speed="400" data-start="1700"></div>--}}
+                        {{--<div class="caption lft ltb color_light slider_title tt_uppercase t_align_c" data-x="95" data-y="170" data-speed="500" data-easing="ease" data-start="1400"><b><span class="scheme_color">Spring/Summer 2014</span><br><span class="color_dark">Ready-To-Wear</span></b></div>--}}
+                        {{--<div class="caption lfb ltt color_light" data-x="206" data-y="318" data-speed="500" data-start="1700">--}}
+                            {{--<a href="#" role="button" class="button_type_4 bg_scheme_color color_light r_corners tt_uppercase">View Collection</a>--}}
+                        {{--</div>--}}
                     </li>
                 @endforeach
 
@@ -148,19 +151,22 @@
             </div>
             <!--blog carousel-->
             <div class="blog_carousel">
+                @foreach($tintucs as $tintuc)
                 <div class="clearfix">
                     <!--image-->
-                    <a href="#" class="d_block photoframe relative shadow wrapper r_corners f_left m_right_20 animate_ftt f_mxs_none m_mxs_bottom_10">
-                        <img class="tr_all_long_hover" src="/front/images/blog_img_1.jpg" alt="">
+                    <a href="/tintuc/{{$tintuc['Id']}}" class="d_block photoframe relative shadow wrapper r_corners f_left m_right_20 animate_ftt f_mxs_none m_mxs_bottom_10">
+                        <img class="tr_all_long_hover" src="{{$tintuc['Photos']['Small']}}" alt="">
                     </a>
                     <!--post content-->
                     <div class="mini_post_content">
-                        <h4 class="m_bottom_5 animate_ftr"><a href="#" class="color_dark"><b>Ut tellus dolor, dapibus eget, elementum vel</b></a></h4>
-                        <p class="f_size_medium m_bottom_10 animate_ftr">25 January, 2013, 5 comments</p>
-                        <p class="m_bottom_10 animate_ftr">Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. </p>
-                        <a class="tt_uppercase f_size_large animate_ftr" href="#">Read More</a>
+                        <h4 class="m_bottom_5 animate_ftr"><a href="#" class="color_dark"><b>{{$tintuc['Name']}}</b></a></h4>
+                        <p class="f_size_medium m_bottom_10 animate_ftr">{{$tintuc['Created_at']}}</p>
+                        {{--25 January, 2013, 5 comments--}}
+                        <p class="m_bottom_10 animate_ftr">{{$tintuc['ContentShort']}}</p>
+                        <a class="tt_uppercase f_size_large animate_ftr" href="/tintuc/{{$tintuc['Id']}}">Read More</a>
                     </div>
                 </div>
+                @endforeach
                 <div class="clearfix">
                     <!--image-->
                     <a href="#" class="d_block photoframe relative shadow wrapper r_corners f_left m_right_20 animate_ftt f_mxs_none m_mxs_bottom_10">
@@ -170,19 +176,6 @@
                     <div class="mini_post_content">
                         <h4 class="m_bottom_5 animate_ftr"><a href="#" class="color_dark"><b>Cursus eleifend, elit aenean set amet lorem</b></a></h4>
                         <p class="f_size_medium m_bottom_10 animate_ftr">30 January, 2013, 6 comments</p>
-                        <p class="m_bottom_10 animate_ftr">Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. </p>
-                        <a class="tt_uppercase f_size_large animate_ftr" href="#">Read More</a>
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <!--image-->
-                    <a href="#" class="d_block photoframe relative shadow wrapper r_corners f_left m_right_20 animate_ftt f_mxs_none m_mxs_bottom_10">
-                        <img class="tr_all_long_hover" src="/front/images/blog_img_3.jpg" alt="">
-                    </a>
-                    <!--post content-->
-                    <div class="mini_post_content">
-                        <h4 class="m_bottom_5 animate_ftr"><a href="#" class="color_dark"><b>In pede mi, aliquet sit ut tellus dolor</b></a></h4>
-                        <p class="f_size_medium m_bottom_10 animate_ftr">1 February, 2013, 12 comments</p>
                         <p class="m_bottom_10 animate_ftr">Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. </p>
                         <a class="tt_uppercase f_size_large animate_ftr" href="#">Read More</a>
                     </div>
@@ -200,28 +193,22 @@
             </div>
             <!--testimonials carousel-->
             <div class="testiomials_carousel">
-                <div>
-                    <blockquote class="r_corners shadow f_size_large relative m_bottom_15 animate_ftr">Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.</blockquote>
+                @foreach($binhluans as $binhluan)
+                <div class="spec">
+                    <blockquote class="spec-blockquote r_corners shadow f_size_large relative m_bottom_15 animate_ftr">{{$binhluan['Comment']}}</blockquote>
                     <img class="circle m_left_20 d_inline_middle animate_ftr" src="/front/images/testimonial_img_1.jpg" alt="">
                     <div class="d_inline_middle m_left_15 animate_ftr">
-                        <h5 class="color_dark"><b>Marta Healy</b></h5>
-                        <p>Los Angeles</p>
+                        <h5 class="color_dark"><b>{{$binhluan['UserName']}}</b></h5>
+                        {{--<p>Los Angeles</p>--}}
                     </div>
                 </div>
+                @endforeach
                 <div>
                     <blockquote class="r_corners shadow f_size_large relative m_bottom_15">Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque.</blockquote>
                     <img class="circle m_left_20 d_inline_middle" src="/front/images/testimonial_img_2.jpg" alt="">
                     <div class="d_inline_middle m_left_15">
                         <h5 class="color_dark"><b>Alan Smith</b></h5>
                         <p>New York</p>
-                    </div>
-                </div>
-                <div>
-                    <blockquote class="r_corners shadow f_size_large relative m_bottom_15">Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet, tincidunt.</blockquote>
-                    <img class="circle m_left_20 d_inline_middle" src="/front/images/testimonial_img_3.jpg" alt="">
-                    <div class="d_inline_middle m_left_15">
-                        <h5 class="color_dark"><b>Anna Johnson</b></h5>
-                        <p>Detroid</p>
                     </div>
                 </div>
             </div>
@@ -280,34 +267,6 @@
         @endforeach
     </div>
     <!--banners-->
-    <section class="row clearfix m_bottom_45 m_sm_bottom_35">
-        <div class="col-lg-6 col-md-6 col-sm-6 animate_half_tc">
-            <a href="#" class="d_block banner wrapper r_corners relative m_xs_bottom_30">
-                <img src="/front/images/banner_img_1.png" alt="">
-                <span class="banner_caption d_block vc_child t_align_c w_sm_auto">
-									<span class="d_inline_middle">
-										<span class="d_block color_dark tt_uppercase m_bottom_5 let_s">New Collection!</span>
-										<span class="d_block divider_type_2 centered_db m_bottom_5"></span>
-										<span class="d_block color_light tt_uppercase m_bottom_15 banner_title"><b>Colored Fashion</b></span>
-										<span class="button_type_6 bg_scheme_color tt_uppercase r_corners color_light d_inline_b tr_all_hover box_s_none f_size_ex_large">Shop Now!</span>
-									</span>
-								</span>
-            </a>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 animate_half_tc">
-            <a href="#" class="d_block banner wrapper r_corners type_2 relative">
-                <img src="/front/images/banner_img_2.png" alt="">
-                <span class="banner_caption d_block vc_child t_align_c w_sm_auto">
-									<span class="d_inline_middle">
-										<span class="d_block scheme_color banner_title type_2 m_bottom_0 m_mxs_bottom_5"><b>-50%</b></span>
-										<span class="d_block divider_type_2 centered_db m_bottom_0 d_sm_none"></span>
-										<span class="d_block color_light tt_uppercase m_bottom_15 m_md_bottom_5 d_mxs_none">On All<br><b>Sunglasses</b></span>
-										<span class="button_type_6 bg_dark_color tt_uppercase r_corners color_light d_inline_b tr_all_hover box_s_none f_size_ex_large">Shop Now!</span>
-									</span>
-								</span>
-            </a>
-        </div>
-    </section>
 
     <!--product brands carousel-->
     <div class="product_brands m_sm_bottom_35 m_xs_bottom_0">

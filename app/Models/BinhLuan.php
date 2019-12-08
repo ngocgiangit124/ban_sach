@@ -21,8 +21,8 @@ class BinhLuan extends Model
         $rels = array(
             "Id"   => $this->BinhLuanId,
             "Comment"     => $this->BinhLuan,
-            "UserName"      => $this->user->Ten,
-            "ProductName"      => $this->sanpham->Ten,
+            "UserName"      => $this->user?$this->user->Ten:'',
+            "ProductName"      => $this->sanpham?$this->sanpham->Ten:'',
             "Created_at"  =>date('d-m-Y H:i', strtotime($this->Created_at)),
         );
         return $rels;

@@ -92,7 +92,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Anh</label>
-                                <input class="form-control" type="file" name="Image[]" multiple required >
+                                <input class="form-control" type="file" name="Image[]" multiple >
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Hình ảnh</label>

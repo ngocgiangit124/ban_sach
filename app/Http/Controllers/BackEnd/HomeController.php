@@ -18,6 +18,7 @@ class HomeController extends Controller
             return view('login', $this->data);
         }
     }
+
     public function postLogin()
     {
         $rule = [
@@ -35,21 +36,21 @@ class HomeController extends Controller
         $password = Input::get('Password');
 
 
-            $credentials = ['Email' => $username, 'password' => $password ];
-            $check = Auth::attempt($credentials);
+        $credentials = ['Email' => $username, 'password' => $password];
+        $check = Auth::attempt($credentials);
 
         if (!$check) {
             $rels = array(
                 'status' => -1,
-                'errors' => ['message'=>'Id, email or password is invalid'],
+                'errors' => ['message' => 'Id, email or password is invalid'],
             );
         } else {
             $user = Auth::User();
-            
+
             if ($user->status == 0) {
                 $rels = array(
                     'status' => -1,
-                    'errors' => ['message'=>'Your account has been bloked'],
+                    'errors' => ['message' => 'Your account has been bloked'],
                 );
             } else {
 
@@ -59,7 +60,6 @@ class HomeController extends Controller
                 );
             }
         }
-
 
 
         if ($rels['status'] == -1) {
@@ -73,5 +73,16 @@ class HomeController extends Controller
     {
         Auth::logout();
         return redirect('/admin/login');
+    }
+    public function pdf() {
+        $html = view('pdf.pdf')->render();
+        $mpdf = new \Mpdf\Mpdf();
+        $mpdf->WriteHTML($html);
+
+// Output a PDF file directly to the browser
+        $mpdf->Output();
+    }
+    public function pdf1() {
+       return view('pdf.pdf');
     }
 }

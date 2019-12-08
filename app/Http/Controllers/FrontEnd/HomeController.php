@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\Models\About;
 use App\Models\SanPham;
 use App\Models\User;
+use App\Repositories\BinhLuanRepository;
 use App\Repositories\SanPhamRepository;
 use App\Repositories\SlideRepository;
 use App\Repositories\TheLoaiRepository;
+use App\Repositories\TinTucRepository;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,12 +21,16 @@ class HomeController extends Controller
     protected $theloaiRepository;
     protected $slideRepository;
     protected $sanphamRepository;
-    public function __construct(SanPhamRepository $sanphamRepository,SlideRepository $slideRepository,TheLoaiRepository $theloaiRepository)
+    protected $tintucRepository;
+    protected $binhluanRepository;
+    public function __construct(BinhLuanRepository $binhluanRepository,TinTucRepository $tintucRepository,SanPhamRepository $sanphamRepository,SlideRepository $slideRepository,TheLoaiRepository $theloaiRepository)
     {
         parent::__construct();
         $this->theloaiRepository =$theloaiRepository;
         $this->slideRepository =$slideRepository;
         $this->sanphamRepository =$sanphamRepository;
+        $this->tintucRepository =$tintucRepository;
+        $this->binhluanRepository =$binhluanRepository;
     }
     public function index() {
         $theloais = $this->theloaiRepository->index();
@@ -36,15 +43,18 @@ class HomeController extends Controller
         $this->data['sanphamSale'] = $sanphamSale['data'];
         $sanphamRandom = $this->sanphamRepository->indexRandom();
         $this->data['sanphamRandoms'] = $sanphamRandom['data'];
-//        dd($this->data);
+        $tintuc = $this->tintucRepository->home();
+        $this->data['tintucs'] = $tintuc['data'];
+        $binhluan = $this->binhluanRepository->home();
+        $this->data['binhluans'] = $binhluan['data'];
        return view('front.index',$this->data);
     }
     public function contact() {
         return view('front.contact.contact',$this->data);
     }
     public function about() {
-        $slides = $this->slideRepository->index();
-        $this->data['slides'] = $slides['data'];
+        $about = About::first();
+        $this->data['gioithieu'] = $about->getArrayInfo();
         return view('front.contact.about',$this->data);
     }
     public function login() {

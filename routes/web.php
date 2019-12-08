@@ -23,6 +23,10 @@ Route::post('/admin/login','BackEnd\HomeController@postLogin');
 
 Route::get('/contact','BackEnd\HomeController@logout');
 
+
+Route::get('/pdf','BackEnd\HomeController@pdf');
+Route::get('/pdf1','BackEnd\HomeController@pdf1');
+
 Route::get('/search','FrontEnd\HomeController@search');
 Route::post('/search','FrontEnd\HomeController@search');
 
@@ -97,5 +101,6 @@ Route::get('show-cart',function () {
     $a = Cart::content();
     dd($a);
 });
+
 
 

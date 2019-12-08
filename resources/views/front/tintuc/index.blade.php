@@ -103,7 +103,7 @@
                 <img src="images/banner_img_6.jpg" alt="">
             </a>
             <!--Specials-->
-            <figure class="widget shadow r_corners wrapper m_bottom_30">
+            <figure class="widget shadow r_corners wrapper m_bottom_30" style="display: none">
                 <figcaption class="clearfix relative">
                     <h3 class="color_light f_left f_sm_none m_sm_bottom_10 m_xs_bottom_0">Specials</h3>
                     <div class="f_right nav_buttons_wrap_type_2 tf_sm_none f_sm_none clearfix">

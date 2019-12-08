@@ -18,17 +18,7 @@
             <div class="row clearfix m_bottom_15">
                 <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12 m_xs_bottom_10">
                     <p class="d_inline_middle f_size_medium d_xs_block m_xs_bottom_5">Results 1 - 5 of 45</p>
-                    <p class="d_inline_middle f_size_medium m_left_20 m_xs_left_0">Show:</p>
-                    <!--show items per page select-->
-                    <div class="custom_select f_size_medium relative d_inline_middle m_left_5">
-                        <div class="select_title r_corners relative color_dark">9</div>
-                        <ul class="select_list d_none"></ul>
-                        <select name="show">
-                            <option value="Manufacture 1">6</option>
-                            <option value="Manufacture 2">3</option>
-                            <option value="Manufacture 3">1</option>
-                        </select>
-                    </div>
+
                     <p class="d_inline_middle f_size_medium m_left_5">items per page</p>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-4 t_align_r t_xs_align_l">
@@ -91,17 +81,6 @@
             <div class="row clearfix m_bottom_15 m_xs_bottom_30">
                 <div class="col-lg-7 col-md-7 col-sm-8 m_xs_bottom_10">
                     <p class="d_inline_middle f_size_medium d_xs_block m_xs_bottom_5">Results 1 - 5 of 45</p>
-                    <p class="d_inline_middle f_size_medium m_left_20 m_xs_left_0">Show:</p>
-                    <!--show items per page select-->
-                    <div class="custom_select f_size_medium relative d_inline_middle m_left_5">
-                        <div class="select_title r_corners relative color_dark">9</div>
-                        <ul class="select_list d_none"></ul>
-                        <select name="show_second">
-                            <option value="Manufacture 1">6</option>
-                            <option value="Manufacture 2">3</option>
-                            <option value="Manufacture 3">1</option>
-                        </select>
-                    </div>
                     <p class="d_inline_middle f_size_medium m_left_5">items per page</p>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-4 t_align_r t_xs_align_l">
@@ -119,73 +98,6 @@
         <!--right column-->
         <aside class="col-lg-3 col-md-3 col-sm-3">
             <!--widgets-->
-            <figure class="widget shadow r_corners wrapper m_bottom_30">
-                <figcaption>
-                    <h3 class="color_light">Filter</h3>
-                </figcaption>
-                <div class="widget_content">
-                    <!--filter form-->
-                    <form>
-                        <!--checkboxes-->
-                        <fieldset class="m_bottom_15">
-                            <legend class="default_t_color f_size_large m_bottom_15 clearfix full_width relative">
-                                <b class="f_left">Manufacturers</b>
-                                <button type="button" class="f_size_medium f_right color_dark bg_tr tr_all_hover close_fieldset"><i class="fa fa-times lh_inherit"></i></button>
-                            </legend>
-                            <input type="checkbox" name="" id="checkbox_1" class="d_none"><label for="checkbox_1">Chanel</label><br>
-                            <input type="checkbox" checked name="" id="checkbox_2" class="d_none"><label for="checkbox_2">Calvin Klein</label><br>
-                            <input type="checkbox" name="" id="checkbox_3" class="d_none"><label for="checkbox_3">Prada</label><br>
-                        </fieldset>
-                        <!--price-->
-                        <fieldset class="m_bottom_20">
-                            <legend class="default_t_color f_size_large m_bottom_15 clearfix full_width relative">
-                                <b class="f_left">Price</b>
-                                <button type="button" class="f_size_medium f_right color_dark bg_tr tr_all_hover close_fieldset"><i class="fa fa-times lh_inherit"></i></button>
-                            </legend>
-                            <div id="price" class="m_bottom_10"></div>
-                            <div class="clearfix range_values">
-                                <input class="f_left first_limit" readonly name="" type="text" value="$0">
-                                <input class="f_right last_limit t_align_r" readonly name="" type="text" value="$250">
-                            </div>
-                        </fieldset>
-                        <!--size-->
-                        <fieldset class="m_bottom_15">
-                            <legend class="default_t_color f_size_large m_bottom_15 clearfix full_width relative">
-                                <b class="f_left">Size</b>
-                                <button type="button" class="f_size_medium f_right color_dark bg_tr tr_all_hover close_fieldset"><i class="fa fa-times lh_inherit"></i></button>
-                            </legend>
-                            <input type="radio" name="size" id="radio_1" class="d_none"><label for="radio_1">S</label><br>
-                            <input type="radio" name="size" checked id="radio_2" class="d_none"><label for="radio_2">M</label><br>
-                            <input type="radio" name="size" id="radio_3" class="d_none"><label for="radio_3">L</label><br>
-                        </fieldset>
-                        <!--color-->
-                        <fieldset class="m_bottom_25 m_sm_bottom_20">
-                            <legend class="default_t_color f_size_large m_bottom_15 clearfix full_width relative">
-                                <b class="f_left">Color</b>
-                                <button type="button" class="f_size_medium f_right color_dark bg_tr tr_all_hover close_fieldset"><i class="fa fa-times lh_inherit"></i></button>
-                            </legend>
-                            <ul class="horizontal_list clearfix">
-                                <li class="m_right_5 m_sm_bottom_5"><button type="button" class="select_color red r_corners color_dark active"><i class="fa fa-check lh_inherit tr_all_hover"></i></button></li>
-                                <li class="m_right_5 m_sm_bottom_5"><button type="button" class="select_color blue r_corners color_dark"><i class="fa fa-check lh_inherit tr_all_hover"></i></button></li>
-                                <li class="m_right_5 m_sm_bottom_5"><button type="button" class="select_color green r_corners color_dark"><i class="fa fa-check lh_inherit tr_all_hover"></i></button></li>
-                                <li class="m_right_5 m_sm_bottom_5"><button type="button" class="select_color grey r_corners color_dark"><i class="fa fa-check lh_inherit tr_all_hover"></i></button></li>
-                                <li class="m_right_5 m_sm_bottom_5"><button type="button" class="select_color yellow r_corners color_dark"><i class="fa fa-check lh_inherit tr_all_hover"></i></button></li>
-                            </ul>
-                        </fieldset>
-                        <fieldset class="m_bottom_25">
-                            <legend class="default_t_color f_size_large m_bottom_15 clearfix full_width relative">
-                                <b class="f_left">Weight</b>
-                                <button type="button" class="f_size_medium f_right color_dark bg_tr tr_all_hover close_fieldset"><i class="fa fa-times lh_inherit"></i></button>
-                            </legend>
-                            <div class="clearfix">
-                                <input type="text" name="" class="r_corners f_left type_2">
-                                <input type="text" name="" class="r_corners f_left type_2 m_left_10">
-                            </div>
-                        </fieldset>
-                        <button type="reset" class="color_dark bg_tr text_cs_hover tr_all_hover"><i class="fa fa-refresh lh_inherit m_right_10"></i>Reset</button>
-                    </form>
-                </div>
-            </figure>
             <figure class="widget shadow r_corners wrapper m_bottom_30">
                 <figcaption>
                     <h3 class="color_light">Categories</h3>

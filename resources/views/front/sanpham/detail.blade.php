@@ -18,9 +18,9 @@
                     {{--<span class="hot_stripe"><img src="{{$photo['Photos']['Large']}}" alt=""></span>--}}
                     <div class="relative d_inline_b m_bottom_10 qv_preview d_xs_block">
                         <img id="zoom_image" src="{{$photo['Photos']['Large']}}" data-zoom-image="{{$photo['Photos']['Large']}}" class="tr_all_hover" alt="">
-                        <a href="{{$photo['Photos']['Large']}}" class="d_block button_type_5 r_corners tr_all_hover box_s_none color_light p_hr_0">
-                            <i class="fa fa-expand"></i>
-                        </a>
+                        {{--<a href="{{$photo['Photos']['Large']}}" class="d_block button_type_5 r_corners tr_all_hover box_s_none color_light p_hr_0">--}}
+                            {{--<i class="fa fa-expand"></i>--}}
+                        {{--</a>--}}
                     </div>
                 @endif
             @endforeach
@@ -100,7 +100,7 @@
                 </tr>
             </table>
             <hr class="divider_type_3 m_bottom_10">
-            <p class="m_bottom_10">////// </p>
+            <p class="m_bottom_10">Nhà Sản Xuất : {{$sanpham['NhaSanXuat']}}, Bảo Hành : {{$sanpham['BaoHanh']}}, Màu sắc : {{$sanpham['MauSac']}} </p>
             <hr class="divider_type_3 m_bottom_15">
             <div class="m_bottom_15">
                 {{--<s class="v_align_b f_size_ex_large">VNĐ {{$sanpham['Price']}}</s>--}}
@@ -175,7 +175,8 @@
                         @foreach($sanpham['Comments'] as $cm)
                         <article>
                             <div class="clearfix m_bottom_10">
-                                <p class="f_size_medium f_left f_mxs_none m_mxs_bottom_5">Bởi {{$cm['UserName']}} - {{$cm['Created_at']}} Thursday, 26 December 2013</p>
+                                <p class="f_size_medium f_left f_mxs_none m_mxs_bottom_5">Bởi {{$cm['UserName']}} - {{$cm['Created_at']}} </p>
+                                {{--Thursday, 26 December 2013--}}
                                 <!--rating-->
                                 <ul class="horizontal_list f_right f_mxs_none clearfix rating_list type_2">
                                     <li class="active">

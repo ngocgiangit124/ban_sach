@@ -34,6 +34,9 @@
             width: 90px;
             height: 90px;
         }
+        blockquote::before {
+            content: '';
+        }
     </style>
 </head>
 <body>
@@ -166,12 +169,12 @@
                             </div>
                             <ul class="f_right horizontal_list d_sm_inline_b f_sm_none clearfix t_align_l site_settings">
                                 <!--like-->
-                                <li>
-                                    <a role="button" href="#" class="button_type_1 color_dark d_block bg_light_color_1 r_corners tr_delay_hover box_s_none"><i class="fa fa-heart-o f_size_ex_large"></i><span class="count circle t_align_c">12</span></a>
-                                </li>
-                                <li class="m_left_5">
-                                    <a role="button" href="#" class="button_type_1 color_dark d_block bg_light_color_1 r_corners tr_delay_hover box_s_none"><i class="fa fa-files-o f_size_ex_large"></i><span class="count circle t_align_c">3</span></a>
-                                </li>
+                                {{--<li>--}}
+                                    {{--<a role="button" href="#" class="button_type_1 color_dark d_block bg_light_color_1 r_corners tr_delay_hover box_s_none"><i class="fa fa-heart-o f_size_ex_large"></i><span class="count circle t_align_c">12</span></a>--}}
+                                {{--</li>--}}
+                                {{--<li class="m_left_5">--}}
+                                    {{--<a role="button" href="#" class="button_type_1 color_dark d_block bg_light_color_1 r_corners tr_delay_hover box_s_none"><i class="fa fa-files-o f_size_ex_large"></i><span class="count circle t_align_c">3</span></a>--}}
+                                {{--</li>--}}
                                 <!--shopping cart-->
                                 <li class="m_left_5 relative container3d" id="shopping_button">
                                     <a role="button" href="/cart" class="button_type_3 color_light bg_scheme_color d_block r_corners tr_delay_hover box_s_none">
@@ -179,77 +182,9 @@
 													<i class="fa fa-shopping-cart"></i>
 													<span id="amount-spec" class="count tr_delay_hover type_2 circle t_align_c">{{$cart}}</span>
 												</span>
-                                        <b>$355</b>
+                                        {{--<b>$35500000</b>--}}
+                                        <b>Giỏ hàng</b>
                                     </a>
-                                    <div class="shopping_cart top_arrow tr_all_hover r_corners">
-                                        <div class="f_size_medium sc_header">Recently added item(s)</div>
-                                        <ul class="products_list">
-                                            <li>
-                                                <div class="clearfix">
-                                                    <!--product image-->
-                                                    <img class="f_left m_right_10" src="/front/images/shopping_c_img_1.jpg" alt="">
-                                                    <!--product description-->
-                                                    <div class="f_left product_description">
-                                                        <a href="#" class="color_dark m_bottom_5 d_block">Cursus eleifend elit aenean auctor wisi et urna</a>
-                                                        <span class="f_size_medium">Product Code PS34</span>
-                                                    </div>
-                                                    <!--product price-->
-                                                    <div class="f_left f_size_medium">
-                                                        <div class="clearfix">
-                                                            1 x <b class="color_dark">$99.00</b>
-                                                        </div>
-                                                        <button class="close_product color_dark tr_hover"><i class="fa fa-times"></i></button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="clearfix">
-                                                    <!--product image-->
-                                                    <img class="f_left m_right_10" src="/front/images/shopping_c_img_2.jpg" alt="">
-                                                    <!--product description-->
-                                                    <div class="f_left product_description">
-                                                        <a href="#" class="color_dark m_bottom_5 d_block">Cursus eleifend elit aenean auctor wisi et urna</a>
-                                                        <span class="f_size_medium">Product Code PS34</span>
-                                                    </div>
-                                                    <!--product price-->
-                                                    <div class="f_left f_size_medium">
-                                                        <div class="clearfix">
-                                                            1 x <b class="color_dark">$99.00</b>
-                                                        </div>
-                                                        <button class="close_product color_dark tr_hover"><i class="fa fa-times"></i></button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="clearfix">
-                                                    <!--product image-->
-                                                    <img class="f_left m_right_10" src="/front/images/shopping_c_img_3.jpg" alt="">
-                                                    <!--product description-->
-                                                    <div class="f_left product_description">
-                                                        <a href="#" class="color_dark m_bottom_5 d_block">Cursus eleifend elit aenean auctor wisi et urna</a>
-                                                        <span class="f_size_medium">Product Code PS34</span>
-                                                    </div>
-                                                    <!--product price-->
-                                                    <div class="f_left f_size_medium">
-                                                        <div class="clearfix">
-                                                            1 x <b class="color_dark">$99.00</b>
-                                                        </div>
-                                                        <button class="close_product color_dark tr_hover"><i class="fa fa-times"></i></button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <!--total price-->
-                                        <ul class="total_price bg_light_color_1 t_align_r color_dark">
-                                            <li class="m_bottom_10">Tax: <span class="f_size_large sc_price t_align_l d_inline_b m_left_15">$0.00</span></li>
-                                            <li class="m_bottom_10">Discount: <span class="f_size_large sc_price t_align_l d_inline_b m_left_15">$37.00</span></li>
-                                            <li>Total: <b class="f_size_large bold scheme_color sc_price t_align_l d_inline_b m_left_15">$999.00</b></li>
-                                        </ul>
-                                        <div class="sc_footer t_align_c">
-                                            <a href="#" role="button" class="button_type_4 d_inline_middle bg_light_color_2 r_corners color_dark t_align_c tr_all_hover m_mxs_bottom_5">View Cart</a>
-                                            <a href="#" role="button" class="button_type_4 bg_scheme_color d_inline_middle r_corners tr_all_hover color_light">Checkout</a>
-                                        </div>
-                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -410,22 +345,22 @@
 <!--social widgets-->
 <ul class="social_widgets d_xs_none">
     <!--facebook-->
-    <li class="relative">
-        <button class="sw_button t_align_c facebook"><i class="fa fa-facebook"></i></button>
+    {{--<li class="relative">--}}
+        {{--<button class="sw_button t_align_c facebook"><i class="fa fa-facebook"></i></button>--}}
         {{--<div class="sw_content">--}}
             {{--<h3 class="color_dark m_bottom_20">Join Us on Facebook</h3>--}}
             {{--<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fenvato&amp;width=235&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=438889712801266" style="border:none; overflow:hidden; width:235px; height:258px;"></iframe>--}}
         {{--</div>--}}
-    </li>
+    {{--</li>--}}
     <!--twitter feed-->
-    <li class="relative">
-        <button class="sw_button t_align_c twitter"><i class="fa fa-twitter"></i></button>
+    {{--<li class="relative">--}}
+        {{--<button class="sw_button t_align_c twitter"><i class="fa fa-twitter"></i></button>--}}
         {{--<div class="sw_content">--}}
             {{--<h3 class="color_dark m_bottom_20">Latest Tweets</h3>--}}
             {{--<div class="twitterfeed m_bottom_25"></div>--}}
             {{--<a role="button" class="button_type_4 d_inline_b r_corners tr_all_hover color_light tw_color" href="https://twitter.com/fanfbmltemplate">Follow on Twitter</a>--}}
         {{--</div>--}}
-    </li>
+    {{--</li>--}}
     <!--contact form-->
     <li class="relative">
         <button class="sw_button t_align_c contact"><i class="fa fa-envelope-o"></i></button>
@@ -441,8 +376,8 @@
         </div>
     </li>
     <!--contact info-->
-    <li class="relative">
-        <button class="sw_button t_align_c googlemap"><i class="fa fa-map-marker"></i></button>
+    {{--<li class="relative">--}}
+        {{--<button class="sw_button t_align_c googlemap"><i class="fa fa-map-marker"></i></button>--}}
         {{--<div class="sw_content">--}}
             {{--<h3 class="color_dark m_bottom_20">Store Location</h3>--}}
             {{--<ul class="c_info_list">--}}
@@ -473,7 +408,7 @@
                 {{--</li>--}}
             {{--</ul>--}}
         {{--</div>--}}
-    </li>
+    {{--</li>--}}
 </ul>
 <!--custom popup-->
 <div class="popup_wrap d_none" id="quick_view_product">

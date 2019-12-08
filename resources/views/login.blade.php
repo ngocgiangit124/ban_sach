@@ -33,7 +33,7 @@
                 <form class="mb-lg" role="form" action="/admin/login" method="post">
                     <input type="hidden" name="_token" value="{{csrf_token()}}" >
                     <div class="form-group has-feedback">
-                        <input class="form-control" name="Email" id="exampleInputEmail1" type="email" placeholder="Enter email" autocomplete="off" required>
+                        <input class="form-control" value="{{old('Email')}}" name="Email" id="exampleInputEmail1" type="email" placeholder="Enter email" autocomplete="off" required>
                         <span class="fa fa-envelope form-control-feedback text-muted"></span>
                     </div>
                     <div class="form-group has-feedback">
