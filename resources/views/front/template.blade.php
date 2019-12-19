@@ -49,7 +49,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-5 t_xs_align_c">
                         <ul class="d_inline_b horizontal_list clearfix f_size_small users_nav">
                             @if(!$auth)
-                                <li><a href="#" class="default_t_color" data-popup="#login_popup">Log in</a></li>
+                                <li><a href="#" class="default_t_color" data-popup="#login_popup">Đăng nhập</a></li>
                                 {{--<a href="/login">--}}
                                     {{--<img src="/front/img/icon/user.png" alt="">--}}
                                 {{--</a>--}}
@@ -58,35 +58,15 @@
                                 {{--</a>--}}
                             @else
                                 <li><a href="#" class="default_t_color"> {{$auth->Ten}}</a></li>
-                                <li><a href="/logout" class="default_t_color"> Logout</a></li>
+                                <li><a href="/logout" class="default_t_color"> Đăng xuất</a></li>
                             @endif
-                            <li><a href="checkout.html" class="default_t_color">Checkout</a></li>
+                            <li><a href="/cart" class="default_t_color">Thanh toán</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-2 t_align_c t_xs_align_c">
-                        <p class="f_size_small">Call us toll free: <b class="color_dark">(123) 456-7890</b></p>
+                        <p class="f_size_small">Gọi cho chúng tôi miễn phí: <b class="color_dark">(123) 456-7890</b></p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-5 t_align_r t_xs_align_c">
-                        <ul class="horizontal_list clearfix d_inline_b t_align_l f_size_small site_settings type_2">
-                            <li class="container3d relative">
-                                <a role="button" href="#" class="color_dark" id="lang_button"><img class="d_inline_middle m_right_10" src="/front/images/flag_en.jpg" alt="">English</a>
-                                <ul class="dropdown_list type_2 top_arrow color_light">
-                                    <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="/front/images/flag_en.jpg" alt="">English</a></li>
-                                    <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="/front/images/flag_fr.jpg" alt="">French</a></li>
-                                    <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="/front/images/flag_g.jpg" alt="">German</a></li>
-                                    <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="/front/images/flag_i.jpg" alt="">Italian</a></li>
-                                    <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="/front/images/flag_s.jpg" alt="">Spanish</a></li>
-                                </ul>
-                            </li>
-                            <li class="m_left_20 relative container3d">
-                                <a role="button" href="#" class="color_dark" id="currency_button"><span class="scheme_color">$</span> US Dollar</a>
-                                <ul class="dropdown_list type_2 top_arrow color_light">
-                                    <li><a href="#" class="tr_delay_hover color_light"><span class="scheme_color">$</span> US Dollar</a></li>
-                                    <li><a href="#" class="tr_delay_hover color_light"><span class="scheme_color">&#8364;</span> Euro</a></li>
-                                    <li><a href="#" class="tr_delay_hover color_light"><span class="scheme_color">&#163;</span> Pound</a></li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -146,9 +126,9 @@
                                                 {{--</ul>--}}
                                             {{--</div>--}}
                                         </li>
-                                        <li class="{{ Request::segment(1) == 'contact'?'current':'' }} relative f_xs_none m_xs_bottom_5 m_left_10 m_xs_left_0"><a href="/contact" class="tr_delay_hover color_dark tt_uppercase r_corners"><b>Liên hệ</b></a>
-                                            <!--sub menu-->
-                                        </li>
+                                        {{--<li class="{{ Request::segment(1) == 'contact'?'current':'' }} relative f_xs_none m_xs_bottom_5 m_left_10 m_xs_left_0"><a href="/contact" class="tr_delay_hover color_dark tt_uppercase r_corners"><b>Liên hệ</b></a>--}}
+                                            {{--<!--sub menu-->--}}
+                                        {{--</li>--}}
                                     </ul>
                                 </nav>
                                 <button class="f_right search_button tr_all_hover f_xs_none d_xs_none">
@@ -209,36 +189,27 @@
     <div class="footer_top_part p_vr_0">
         <div class="container">
             <div class="row clearfix">
-                <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_bottom_40">
-                    <h3 class="color_light_2 m_bottom_20">About</h3>
-                    <p class="m_bottom_15">Ut pharetra augue nec augue. Nam elit agna, endrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quisque diam lorem, interdum vitae, dapibus ac, scelerisque.</p>
-                    <a href="#" class="color_light">Read More <i class="fa fa-angle-right m_left_5"></i></a>
+                <div class="col-lg-5 col-md-5 col-sm-5 m_xs_bottom_30 m_bottom_40">
+                    <h3 class="color_light_2 m_bottom_20">Giới thiệu </h3>
+                    <p class="m_bottom_15">Trang web bán sách được xây dựng dưới nền tảng php và mysql , với các trang sách hay , với nhiều thể loại...</p>
+                    <a href="/about" class="color_light">Xem thêm<i class="fa fa-angle-right m_left_5"></i></a>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_bottom_40">
-                    <h3 class="color_light_2 m_bottom_20">The Service</h3>
+                {{--<div class="col-lg-4 col-md-4 col-sm-4 m_xs_bottom_30 m_bottom_40">--}}
+                    {{--<h3 class="color_light_2 m_bottom_20">Dịch vụ</h3>--}}
+                    {{--<ul class="vertical_list">--}}
+                        {{--<li><a class="color_light tr_delay_hover" href="#">My account<i class="fa fa-angle-right"></i></a></li>--}}
+                        {{--<li><a class="color_light tr_delay_hover" href="#">Order history<i class="fa fa-angle-right"></i></a></li>--}}
+                        {{--<li><a class="color_light tr_delay_hover" href="#">Wishlist<i class="fa fa-angle-right"></i></a></li>--}}
+                        {{--<li><a class="color_light tr_delay_hover" href="#">Categories<i class="fa fa-angle-right"></i></a></li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+                <div class="col-lg-7 col-md-7 col-sm-7 m_xs_bottom_30 m_bottom_40">
+                    <h3 class="color_light_2 m_bottom_20">Thông tin</h3>
                     <ul class="vertical_list">
-                        <li><a class="color_light tr_delay_hover" href="#">My account<i class="fa fa-angle-right"></i></a></li>
-                        <li><a class="color_light tr_delay_hover" href="#">Order history<i class="fa fa-angle-right"></i></a></li>
-                        <li><a class="color_light tr_delay_hover" href="#">Wishlist<i class="fa fa-angle-right"></i></a></li>
-                        <li><a class="color_light tr_delay_hover" href="#">Categories<i class="fa fa-angle-right"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_bottom_40">
-                    <h3 class="color_light_2 m_bottom_20">Information</h3>
-                    <ul class="vertical_list">
-                        <li><a class="color_light tr_delay_hover" href="#">About us<i class="fa fa-angle-right"></i></a></li>
-                        <li><a class="color_light tr_delay_hover" href="#">Delivery<i class="fa fa-angle-right"></i></a></li>
-                        <li><a class="color_light tr_delay_hover" href="#">Privacy policy<i class="fa fa-angle-right"></i></a></li>
-                        <li><a class="color_light tr_delay_hover" href="#">Terms &amp; condition<i class="fa fa-angle-right"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 m_bottom_40 m_xs_bottom_30">
-                    <h3 class="color_light_2 m_bottom_20">Catalog</h3>
-                    <ul class="vertical_list">
-                        <li><a class="color_light tr_delay_hover" href="#">New collection<i class="fa fa-angle-right"></i></a></li>
-                        <li><a class="color_light tr_delay_hover" href="#">Best sellers<i class="fa fa-angle-right"></i></a></li>
-                        <li><a class="color_light tr_delay_hover" href="#">Specials<i class="fa fa-angle-right"></i></a></li>
-                        <li><a class="color_light tr_delay_hover" href="#">Manufacturers<i class="fa fa-angle-right"></i></a></li>
+                        <li><a class="color_light tr_delay_hover" href="#"> Nguyễn Thị Mỹ An<i class="fa fa-angle-right"></i></a></li>
+                        <li><a class="color_light tr_delay_hover" href="#">Cụm CN Cầu Xây, Tân Lập, Huyện Đan PHượng, Tp.Hà Nội<i class="fa fa-angle-right"></i></a></li>
+                        <li><a class="color_light tr_delay_hover" href="#"> 04 33663771 - 099 515 8716<i class="fa fa-angle-right"></i></a></li>
+                        <li><a class="color_light tr_delay_hover" href="#">minh@fasific.com<i class="fa fa-angle-right"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -318,10 +289,10 @@
                     </ul>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 m_bottom_20 m_xs_bottom_30">
-                    <h3 class="color_light_2 d_inline_middle m_md_bottom_15 d_xs_block">Newsletter</h3>
+                    <h3 class="color_light_2 d_inline_middle m_md_bottom_15 d_xs_block">Bản tin</h3>
                     <form id="newsletter" class="d_inline_middle m_left_5 subscribe_form_2 m_md_left_0">
                         <input type="email" placeholder="Your email address" class="r_corners f_size_medium w_sm_auto m_mxs_bottom_15" name="newsletter-email">
-                        <button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hover m_left_5 m_mxs_left_0">Subscribe</button>
+                        <button type="submit" class="button_type_8 r_corners bg_scheme_color color_light tr_all_hover m_left_5 m_mxs_left_0">Theo dõi</button>
                     </form>
                 </div>
             </div>
@@ -330,7 +301,7 @@
     <!--copyright part-->
     <div class="footer_bottom_part">
         <div class="container clearfix t_mxs_align_c">
-            <p class="f_left f_mxs_none m_mxs_bottom_10">&copy; 2014 <span class="color_light">Flatastic</span>. All Rights Reserved.</p>
+            <p class="f_left f_mxs_none m_mxs_bottom_10">&copy; 2019 <span class="color_light">Flatastic</span>. All Rights Reserved.</p>
             <ul class="f_right horizontal_list clearfix f_mxs_none d_mxs_inline_b">
                 <li><img src="/front/images/payment_img_1.png" alt=""></li>
                 <li class="m_left_5"><img src="/front/images/payment_img_2.png" alt=""></li>
@@ -412,41 +383,66 @@
 </ul>
 <!--custom popup-->
 <div class="popup_wrap d_none" id="quick_view_product">
-    @include('front.sanpham.detil_popup')
+    {{--@include('front.sanpham.detil_popup')--}}
 </div>
 <!--login popup-->
 <div class="popup_wrap d_none" id="login_popup">
     <section class="popup r_corners shadow">
         <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
-        <h3 class="m_bottom_20 color_dark">Log In</h3>
-        <form>
+        <h3 class="m_bottom_20 color_dark">Đăng nhập</h3>
+        <form action="/login" method="post">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
             <ul>
                 <li class="m_bottom_15">
-                    <label for="username" class="m_bottom_5 d_inline_b">Username</label><br>
-                    <input type="text" name="" id="username" class="r_corners full_width">
+                    <label for="username" class="m_bottom_5 d_inline_b">Email</label><br>
+                    <input type="text" name="Email" id="username" class="r_corners full_width">
                 </li>
                 <li class="m_bottom_25">
-                    <label for="password" class="m_bottom_5 d_inline_b">Password</label><br>
-                    <input type="password" name="" id="password" class="r_corners full_width">
+                    <label for="password" class="m_bottom_5 d_inline_b">Mật khẩu</label><br>
+                    <input type="password" name="Password" id="password" class="r_corners full_width">
                 </li>
                 <li class="m_bottom_15">
-                    <input type="checkbox" class="d_none" id="checkbox_10"><label for="checkbox_10">Remember me</label>
+                    <input type="checkbox" class="d_none" id="checkbox_10"><label for="checkbox_10">Nhớ mật khẩu</label>
                 </li>
                 <li class="clearfix m_bottom_30">
-                    <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
+                    <button type="submit" class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Đăng nhập</button>
                     <div class="f_right f_size_medium f_mxs_none">
-                        <a href="#" class="color_dark">Forgot your password?</a><br>
-                        <a href="#" class="color_dark">Forgot your username?</a>
+                        <a href="#" class="color_dark">Quên mật khẩu?</a><br>
+                        {{--<a href="#" class="color_dark">Forgot your username?</a>--}}
                     </div>
                 </li>
             </ul>
         </form>
         <footer class="bg_light_color_1 t_mxs_align_c">
-            <h3 class="color_dark d_inline_middle d_mxs_block m_mxs_bottom_15">New Customer?</h3>
-            <a href="#" role="button" class="tr_all_hover r_corners button_type_4 bg_dark_color bg_cs_hover color_light d_inline_middle m_mxs_left_0">Register</a>
+            <h3 class="color_dark d_inline_middle d_mxs_block m_mxs_bottom_15">Khách mới?</h3>
+            <a href="/registration" role="button" class="tr_all_hover r_corners button_type_4 bg_dark_color bg_cs_hover color_light d_inline_middle m_mxs_left_0">Đăng ký</a>
         </footer>
     </section>
 </div>
+
+@if (session('status'))
+    @if(session('status') == 'false')
+    <div class="popup_wrap d_none" style="display: block" id="login_false">
+        <section class="popup r_corners shadow" style="width: auto;top: 40%;left: 40%">
+            <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
+            <h3 class="m_bottom_20 color_dark" style="text-align: center;font-weight: 700">Đăng nhập thất bại</h3>
+        </section>
+    </div>
+    @else
+    <div class="popup_wrap d_none" style="display: block" id="login_success">
+        <section class="popup r_corners shadow" style="width: auto;top: 40%;left: 40%">
+            <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
+            <h3 class="m_bottom_20 color_dark" style="text-align: center;font-weight: 700">Đăng nhập thành công</h3>
+        </section>
+    </div>
+    @endif
+@endif
+
+
+
+
+
+
 <button class="t_align_c r_corners type_2 tr_all_hover animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 <!--scripts include-->
 <script src="/front/js/jquery-2.1.0.min.js"></script>

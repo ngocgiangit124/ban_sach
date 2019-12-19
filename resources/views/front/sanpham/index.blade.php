@@ -41,7 +41,7 @@
                         <!--product preview-->
                         <a href="/sanphams/{{$sanpham['Slug']}}" class="d_block relative wrapper pp_wrap m_bottom_15">
                             <img src="{{$sanpham['Photo']['Medium']}}" class="tr_all_hover" alt="">
-                            <span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                            {{--<span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>--}}
                         </a>
                         <!--description and price of product-->
                         <figcaption>

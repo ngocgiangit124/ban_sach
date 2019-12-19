@@ -48,7 +48,7 @@
     </section>
 @stop
 @section('content')
-    <div class="row clearfix m_xs_bottom_30">
+    <div style="display: none" class="row clearfix m_xs_bottom_30">
         <div class="col-lg-4 col-md-4 col-sm-4 m_bottom_50 m_xs_bottom_0">
             <a href="#" class="d_block animate_ftb h_md_auto m_xs_bottom_15 banner_type_2 r_corners red t_align_c tt_uppercase vc_child n_sm_vc_child">
 								<span class="d_inline_middle">
@@ -85,8 +85,8 @@
         <ul class="horizontal_list clearfix tt_uppercase isotope_menu f_size_ex_large f_left f_xs_none m_xs_bottom_15" data-carousel-filter=".wfilter_carousel">
 
             <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover box_s_none" data-filter="*">All</button></li>
-            @foreach($sanphams as $sanpham)
-            <li class="m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover box_s_none" data-filter="filter_class_{{$sanpham['TheLoaiId']}}">{{$sanpham['TenTheLoai']}}</button></li>
+            @foreach($theloais as $index=>$theloai)
+            <li class=" m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover box_s_none" data-filter="filter_class_{{$theloai['Id']}}">{{$theloai['Name']}}</button></li>
             @endforeach
         </ul>
         <div class="f_right clearfix nav_buttons_wrap f_mxs_none m_mxs_bottom_5 f_xs_none">
@@ -103,7 +103,7 @@
                 <!--hot product-->
                 {{--<span class="hot_stripe"><img src="/front/images/hot_product.png" alt=""></span>--}}
                 <img src="{{$sanpham['Photo']['Medium']}}" class="tr_all_hover" alt="">
-                <span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none view-quick" data-id="{{$sanpham['Id']}}">Quick View</span>
+                {{--<span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none view-quick" data-id="{{$sanpham['Id']}}">Quick View</span>--}}
             </a>
             <!--description and price of product-->
             <figcaption>
@@ -143,7 +143,7 @@
     <div class="row clearfix m_bottom_45 m_md_bottom_35 m_xs_bottom_30">
         <div class="col-lg-6 col-md-6 col-sm-12 m_sm_bottom_35 blog_animate animate_ftr">
             <div class="clearfix m_bottom_25 m_sm_bottom_20">
-                <h2 class="color_dark f_left">From The Blog</h2>
+                <h2 class="color_dark f_left" style="font-weight: 500">Tin tức</h2>
                 <div class="f_right clearfix nav_buttons_wrap">
                     <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left tr_delay_hover r_corners blog_prev"><i class="fa fa-angle-left"></i></button>
                     <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners blog_next"><i class="fa fa-angle-right"></i></button>
@@ -185,7 +185,7 @@
         <!--testimonials-->
         <div class="col-lg-6 col-md-6 col-sm-12 ti_animate animate_ftr">
             <div class="clearfix m_bottom_25 m_sm_bottom_20">
-                <h2 class="color_dark f_left f_mxs_none m_mxs_bottom_15">What Our Customers Say</h2>
+                <h2 class="color_dark f_left f_mxs_none m_mxs_bottom_15">Đánh giá</h2>
                 <div class="f_right clearfix nav_buttons_wrap f_mxs_none">
                     <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left tr_delay_hover r_corners ti_prev"><i class="fa fa-angle-left"></i></button>
                     <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners ti_next"><i class="fa fa-angle-right"></i></button>
@@ -215,7 +215,7 @@
         </div>
     </div>
     <div class="clearfix">
-        <h2 class="color_dark f_left m_bottom_15 f_mxs_none heading5 animate_ftr">Bestsellers</h2>
+        <h2 class="color_dark f_left m_bottom_15 f_mxs_none heading5 animate_ftr" style="font-weight: 500">Sản phẩm bán chạy</h2>
         <div class="f_right clearfix nav_buttons_wrap f_mxs_none m_mxs_bottom_5 animate_fade">
             <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large t_align_c bg_light_color_1 f_left tr_delay_hover r_corners bestsellers_prev"><i class="fa fa-angle-left"></i></button>
             <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large t_align_c bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners bestsellers_next"><i class="fa fa-angle-right"></i></button>
@@ -230,7 +230,7 @@
                 <!--hot product-->
                 {{--<span class="hot_stripe type_2"><img src="images/hot_product_type_2.png" alt=""></span>--}}
                 <img src="{{$sanphamRandom['Photo']['Medium']}}" class="tr_all_hover" alt="">
-                <span data-popup="#quick_view_product" class="box_s_none button_type_5 color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                {{--<span data-popup="#quick_view_product" class="box_s_none button_type_5 color_light r_corners tr_all_hover d_xs_none">Quick View</span>--}}
             </a>
             <!--description and price of product-->
             <figcaption>
@@ -268,21 +268,6 @@
     </div>
     <!--banners-->
 
-    <!--product brands carousel-->
-    <div class="product_brands m_sm_bottom_35 m_xs_bottom_0">
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-        <a href="#" class="d_block t_align_c animate_fade"><img src="/front/images/brand_logo.jpg" alt=""></a>
-    </div>
 @stop
 @section('js')
 @stop

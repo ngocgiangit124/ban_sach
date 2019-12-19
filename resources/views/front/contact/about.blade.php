@@ -27,7 +27,7 @@
                 </p>
             </article>
             <div class="m_bottom_30">
-                <p class="d_inline_middle">Share this:</p>
+                <p class="d_inline_middle">Chia sẻ</p>
                 <div class="d_inline_middle m_left_5 addthis_widget_container">
                     <!-- AddThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style addthis_32x32_style">

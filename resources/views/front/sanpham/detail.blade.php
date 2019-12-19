@@ -122,7 +122,7 @@
                     {{--</td>--}}
                 {{--</tr>--}}
                 <tr>
-                    <td class="v_align_m">Quantity:</td>
+                    <td class="v_align_m">Số lượng:</td>
                     <td class="v_align_m">
                         <div class="clearfix quantity r_corners d_inline_middle f_size_medium color_dark">
                             <button class="bg_tr d_block f_left" data-direction="down">-</button>
@@ -134,11 +134,11 @@
             </table>
             <div class="d_ib_offset_0 m_bottom_20">
                 <button class="button_type_12 r_corners bg_scheme_color color_light tr_delay_hover d_inline_b f_size_large cart" data-slug="{{$sanpham['Slug']}}" data-id="{{$sanpham['Id']}}">Add to Cart</button>
-                <button class="button_type_12 bg_light_color_2 tr_delay_hover d_inline_b r_corners color_dark m_left_5 p_hr_0"><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Wishlist</span><i class="fa fa-heart-o f_size_big"></i></button>
-                <button class="button_type_12 bg_light_color_2 tr_delay_hover d_inline_b r_corners color_dark m_left_5 p_hr_0"><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Compare</span><i class="fa fa-files-o f_size_big"></i></button>
-                <button class="button_type_12 bg_light_color_2 tr_delay_hover d_inline_b r_corners color_dark m_left_5 p_hr_0 relative"><i class="fa fa-question-circle f_size_big"></i><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Ask a Question</span></button>
+                {{--<button class="button_type_12 bg_light_color_2 tr_delay_hover d_inline_b r_corners color_dark m_left_5 p_hr_0"><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Wishlist</span><i class="fa fa-heart-o f_size_big"></i></button>--}}
+                {{--<button class="button_type_12 bg_light_color_2 tr_delay_hover d_inline_b r_corners color_dark m_left_5 p_hr_0"><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Compare</span><i class="fa fa-files-o f_size_big"></i></button>--}}
+                {{--<button class="button_type_12 bg_light_color_2 tr_delay_hover d_inline_b r_corners color_dark m_left_5 p_hr_0 relative"><i class="fa fa-question-circle f_size_big"></i><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Ask a Question</span></button>--}}
             </div>
-            <p class="d_inline_middle">Share this:</p>
+            <p class="d_inline_middle">Chia sẻ:</p>
             <div class="d_inline_middle m_left_5 addthis_widget_container">
                 <!-- AddThis Button BEGIN -->
                 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
@@ -160,7 +160,7 @@
             <ul class="tabs_nav horizontal_list clearfix">
                 <li class="f_xs_none"><a href="#tab-1" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block">Mô tả</a></li>
                 <li class="f_xs_none"><a href="#tab-3" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block">Đánh giá</a></li>
-                <li class="f_xs_none"><a href="#tab-4" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block">Video</a></li>
+                <li class="f_xs_none"><a href="#tab-4" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block">Đọc sách</a></li>
             </ul>
         </nav>
         <section class="tabs_content shadow r_corners">
@@ -262,7 +262,7 @@
         </section>
     </div>
     <div class="clearfix">
-        <h2 class="color_dark f_left m_bottom_15 f_mxs_none">Related Products</h2>
+        <h2 class="color_dark f_left m_bottom_15 f_mxs_none" style="font-weight: 500">Sản phẩm liên quan</h2>
         <div class="f_right clearfix nav_buttons_wrap f_mxs_none m_mxs_bottom_5">
             <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large t_align_c bg_light_color_1 f_left tr_delay_hover r_corners rp_prev"><i class="fa fa-angle-left"></i></button>
             <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large t_align_c bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners rp_next"><i class="fa fa-angle-right"></i></button>
@@ -275,7 +275,7 @@
                 <!--hot product-->
                 <span class="hot_stripe type_2"><img src="/front/images/hot_product_type_2.png" alt=""></span>
                 <img src="/front/images/product_img_5.jpg" class="tr_all_hover" alt="">
-                <span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                {{--<span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>--}}
             </a>
             <!--description and price of product-->
             <figcaption class="t_xs_align_l">
@@ -313,7 +313,7 @@
             <!--product preview-->
             <a href="#" class="d_block relative pp_wrap">
                 <img src="/front/images/product_img_7.jpg" class="tr_all_hover" alt="">
-                <span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                {{--<span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>--}}
             </a>
             <!--description and price of product-->
             <figcaption class="t_xs_align_l">
@@ -353,7 +353,7 @@
                 <!--sale product-->
                 <span class="hot_stripe type_2"><img src="/front/images/sale_product_type_2.png" alt=""></span>
                 <img src="/front/images/product_img_8.jpg" class="tr_all_hover" alt="">
-                <span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                {{--<span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>--}}
             </a>
             <!--description and price of product-->
             <figcaption class="t_xs_align_l">
@@ -393,7 +393,7 @@
                 <!--hot product-->
                 <span class="hot_stripe type_2"><img src="/front/images/hot_product_type_2.png" alt=""></span>
                 <img src="/front/images/product_img_3.jpg" class="tr_all_hover" alt="">
-                <span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                {{--<span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>--}}
             </a>
             <!--description and price of product-->
             <figcaption class="t_xs_align_l">
@@ -431,7 +431,7 @@
             <!--product preview-->
             <a href="#" class="d_block relative pp_wrap">
                 <img src="/front/images/product_img_1.jpg" class="tr_all_hover" alt="">
-                <span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                {{--<span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>--}}
             </a>
             <!--description and price of product-->
             <figcaption class="t_xs_align_l">
@@ -471,7 +471,7 @@
                 <!--sale product-->
                 <span class="hot_stripe type_2"><img src="/front/images/sale_product_type_2.png" alt=""></span>
                 <img src="/front/images/product_img_9.jpg" class="tr_all_hover" alt="">
-                <span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                {{--<span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>--}}
             </a>
             <!--description and price of product-->
             <figcaption class="t_xs_align_l">
@@ -507,7 +507,7 @@
         </figure>
     </div>
     <hr class="divider_type_3 m_bottom_15">
-    <a href="category_grid.html" role="button" class="d_inline_b bg_light_color_2 color_dark tr_all_hover button_type_4 r_corners"><i class="fa fa-reply m_left_5 m_right_10 f_size_large"></i>Back to: Woman</a>
+    {{--<a href="category_grid.html" role="button" class="d_inline_b bg_light_color_2 color_dark tr_all_hover button_type_4 r_corners"><i class="fa fa-reply m_left_5 m_right_10 f_size_large"></i>Back to: Woman</a>--}}
 
 
 

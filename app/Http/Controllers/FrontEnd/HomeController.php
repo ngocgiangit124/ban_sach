@@ -47,6 +47,7 @@ class HomeController extends Controller
         $this->data['tintucs'] = $tintuc['data'];
         $binhluan = $this->binhluanRepository->home();
         $this->data['binhluans'] = $binhluan['data'];
+//        dd($this->data);
        return view('front.index',$this->data);
     }
     public function contact() {
@@ -76,7 +77,7 @@ class HomeController extends Controller
             $rule
         );
         if ($validator->fails()) {
-            return back()->withErrors("Please enter your info")->withInput();
+            return back()->with('status', 'false');
         }
         $username = Input::get('Email');
         $password = Input::get('Password');
@@ -107,10 +108,11 @@ class HomeController extends Controller
 
 
         if ($rels['status'] == -1) {
-            return back()->withErrors($rels['errors']['message'])->withInput();
+//            return back()->withErrors($rels['errors']['message'])->withInput();
+            return  back()->with('status', 'false');
         }
         $this->data['user'] = $rels['data'];
-        return redirect('/');
+        return back()->with('status', 'tru');
     }
     public function registration() {
         $users = new User();

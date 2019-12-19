@@ -21,17 +21,17 @@
     <div class="row clearfix">
         <!--left content column-->
         <section class="col-lg-9 col-md-9 col-sm-9 m_xs_bottom_30">
-            <h2 class="color_dark m_bottom_25">Cart</h2>
+            <h2 class="color_dark m_bottom_25">Giỏ hàng</h2>
             <!--cart table-->
             <table class="table_type_4 responsive_table full_width r_corners wraper shadow t_align_l t_xs_align_c m_bottom_30">
                 <thead>
                 <tr class="f_size_large">
                     <!--titles for td-->
-                    <th>Product Image &amp; Name</th>
-                    <th>SKU</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
+                    <th>Ảnh &amp; Tên sản phẩm</th>
+                    <th>Thể loại</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Tổng tiền</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,39 +57,27 @@
                             <button class="bg_tr d_block f_left cart_quantity_up" data-check="1" data-id="{{$show['Id']}}"  data-direction="up">+</button>
                         </div>
                         <div>
-                            <a href="/cart" class="color_dark"><i class="fa fa-check f_size_medium m_right_5"></i>Update</a><br>
-                            <a href="javascript:" class="color_dark cart_quantity_delete" data-id="{{$show['Id']}}"><i class="fa fa-times f_size_medium m_right_5 "></i>Remove</a><br>
+                            <a href="/cart" class="color_dark"><i class="fa fa-check f_size_medium m_right_5"></i>Cập nhật</a><br>
+                            <a href="javascript:" class="color_dark cart_quantity_delete" data-id="{{$show['Id']}}"><i class="fa fa-times f_size_medium m_right_5 "></i>Xóa</a><br>
                         </div>
                     </td>
                     <!--subtotal-->
                     <td data-title="Subtotal">
-                        <p class="f_size_large fw_medium scheme_color">{{$show['Product']['Price']}} VNĐ</p>
+                        <p class="f_size_large fw_medium scheme_color">{{number_format($show['Product']['Price'])}} VNĐ</p>
                     </td>
                 </tr>
                 @endforeach
 
                 <tr>
                     <td colspan="4">
-                        <p class="fw_medium f_size_large t_align_r t_xs_align_c">Tax Total:</p>
+                        <p class="fw_medium f_size_large t_align_r t_xs_align_c">Tổng tiền:</p>
                     </td>
                     <td colspan="1">
-                        <p class="fw_medium f_size_large color_dark">{{$total}} VNĐ</p>
+                        <p class="fw_medium f_size_large color_dark">{{number_format($total)}} VNĐ</p>
                     </td>
                 </tr>
                 <!--total-->
-                <tr>
-                    <td colspan="4" class="v_align_m d_ib_offset_large t_xs_align_l">
-                        <!--coupon-->
-                        <form class="d_ib_offset_0 d_inline_middle half_column d_xs_block w_xs_full m_xs_bottom_5">
-                            <input type="text" placeholder="Enter your coupon code" name="" class="r_corners f_size_medium">
-                            <button class="button_type_4 r_corners bg_light_color_2 m_left_5 mw_0 tr_all_hover color_dark">Save</button>
-                        </form>
-                        <p class="fw_medium f_size_large t_align_r scheme_color p_xs_hr_0 d_inline_middle half_column d_ib_offset_normal d_xs_block w_xs_full t_xs_align_c">Total:</p>
-                    </td>
-                    <td colspan="1" class="v_align_m">
-                        <p class="fw_medium f_size_large scheme_color m_xs_bottom_10">{{$total}} VNĐ</p>
-                    </td>
-                </tr>
+
                 </tbody>
             </table>
             <!--tabs-->
@@ -98,31 +86,32 @@
                 <!--tabs navigation-->
                 <nav>
                     <ul class="tabs_nav horizontal_list clearfix">
-                        <li><a href="#tab-1" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block">Login</a></li>
+                        <li><a href="#tab-1" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block">Đăng nhập</a></li>
                     </ul>
                 </nav>
                 <section class="tabs_content shadow r_corners">
                     <div id="tab-1">
                         <!--login form-->
-                        <h5 class="fw_medium m_bottom_15">I am Already Registered</h5>
-                        <form>
+                        <h5 class="fw_medium m_bottom_15">Tôi đã có tài khoản</h5>
+                        <form action="/login" method="post">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <ul>
                                 <li class="clearfix m_bottom_15">
                                     <div class="half_column type_2 f_left">
-                                        <label for="username" class="m_bottom_5 d_inline_b">Username</label>
-                                        <input type="text" id="username" name="" class="r_corners full_width m_bottom_5">
-                                        <a href="#" class="color_dark f_size_medium">Forgot your username?</a>
+                                        <label for="username" class="m_bottom_5 d_inline_b">Email</label>
+                                        <input type="text" id="username" name="Email" class="r_corners full_width m_bottom_5">
                                     </div>
                                     <div class="half_column type_2 f_left">
-                                        <label for="pass" class="m_bottom_5 d_inline_b">Password</label>
-                                        <input type="password" id="pass" name="" class="r_corners full_width m_bottom_5">
-                                        <a href="#" class="color_dark f_size_medium">Forgot your password?</a>
+                                        <label for="pass" class="m_bottom_5 d_inline_b">Mật khẩu</label>
+                                        <input type="password" id="pass" name="Password" class="r_corners full_width m_bottom_5">
                                     </div>
                                 </li>
-                                <li class="m_bottom_15">
-                                    <input type="checkbox" class="d_none" name="checkbox_4" id="checkbox_4"><label for="checkbox_4">Remember me</label>
+
+                                <li>
+                                    <button type="submit" class="button_type_4 r_corners bg_scheme_color color_light tr_all_hover">Đăng nhập</button>
+                                    <a href="/registration" style="float: right;text-align: center" class="button_type_4 r_corners bg_scheme_color color_light tr_all_hover">Đăng ký</a>
                                 </li>
-                                <li><button class="button_type_4 r_corners bg_scheme_color color_light tr_all_hover">Log In</button></li>
+
                             </ul>
                         </form>
                     </div>
@@ -135,7 +124,7 @@
                         <li><a href="#tab-1" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block">Register</a></li>
                     </ul>
                 </nav>
-                <section class="tabs_content shadow r_corners">
+                <section class="tabs_content shadow r_corners" style="display: none">
                     <div id="tab-2">
                         <form>
                             <ul>
@@ -173,12 +162,12 @@
                 </section>
             </div>
             @endif
-            <h2 class="color_dark m_bottom_25">Bill To &amp; Shipment Information</h2>
+            <h2 class="color_dark m_bottom_25">Thông tin khách mua hàng</h2>
 
             <div class="bs_inner_offsets bg_light_color_3 shadow r_corners m_bottom_45">
                 <div class="row clearfix">
                     <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_30">
-                        <h5 class="fw_medium m_bottom_15">Bill To</h5>
+                        <h5 class="fw_medium m_bottom_15">Thông tin</h5>
                         <form action="/cart" method="post" id="form-cart">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="Id" value="{{$auth?$auth->NguoiDungId:''}}">
@@ -204,20 +193,12 @@
                     </div>
                 </div>
             </div>
-            <h2 class="color_dark m_bottom_30">Notes and special requests</h2>
+            <h2 class="color_dark m_bottom_30">Thanh toán</h2>
             <!--requests table-->
             <table class="table_type_5 full_width r_corners wraper shadow t_align_l">
                 <tr>
-                    <td class="t_align_r">
-                        <p class="f_size_large fw_medium scheme_color">Total:</p>
-                    </td>
-                    <td>
-                        <p class="f_size_large fw_medium scheme_color">{{$total}} VNĐ</p>
-                    </td>
-                </tr>
-                <tr>
                     <td colspan="2">
-                        <input type="checkbox" name="checkbox_8" id="checkbox_8" class="d_none"><label for="checkbox_8">I agree to the Terms of Service (Terms of service)</label>
+                        <input type="checkbox" name="checkbox_8" id="checkbox_8" class="d_none"><label for="checkbox_8">Tôi đồng ý với điều khoản của cửa hàng</label>
                     </td>
                 </tr>
                 <tr>
@@ -368,7 +349,6 @@
             </figure>
         </aside>
     </div>
-
 
 
 
