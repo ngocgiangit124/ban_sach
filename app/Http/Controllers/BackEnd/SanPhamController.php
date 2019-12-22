@@ -99,7 +99,7 @@ class SanPhamController extends Controller
         $hinhanh = new HinhAnh();
             $full_item_photo_dir = config('image.image_root').'/sanphams/'.$date_dir_name;
             $fileName = $sanpham->SanPhamId.'_'.$key;
-            $size = config('image.sanphams');
+//            $size = config('image.sanphams');
             ImageLib::upload_image($photo, $full_item_photo_dir, $fileName, config('image.images.sanphams'), 0);
         $hinhanh->Anh = $fileName;
         $hinhanh->SanPhamId = $sanpham->SanPhamId;
