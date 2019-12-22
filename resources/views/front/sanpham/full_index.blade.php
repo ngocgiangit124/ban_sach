@@ -41,7 +41,7 @@
                             <!--product preview-->
                             <a href="/sanphams/{{$sanpham['Slug']}}" class="d_block relative wrapper pp_wrap m_bottom_15">
                                 <img src="{{$sanpham['Photo']['Medium']}}" class="tr_all_hover" alt="">
-                                <span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                                {{--<span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>--}}
                             </a>
                             <!--description and price of product-->
                             <figcaption>
@@ -70,7 +70,7 @@
                                     </li>
                                 </ul>
                                 <p class="scheme_color f_size_large m_bottom_15">VNĐ {{$sanpham['Price']}}</p>
-                                <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15  add-cart" data-id="{{$sanpham['Id']}}">Add to Cart</button>
+                                <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15  add-cart" data-id="{{$sanpham['Id']}}">Thêm vào giỏ hàng</button>
                             </figcaption>
                         </figure>
                     </div>
@@ -80,8 +80,8 @@
             <hr class="m_bottom_10 divider_type_3">
             <div class="row clearfix m_bottom_15 m_xs_bottom_30">
                 <div class="col-lg-7 col-md-7 col-sm-8 m_xs_bottom_10">
-                    <p class="d_inline_middle f_size_medium d_xs_block m_xs_bottom_5">Results 1 - 5 of 45</p>
-                    <p class="d_inline_middle f_size_medium m_left_5">items per page</p>
+                    {{--<p class="d_inline_middle f_size_medium d_xs_block m_xs_bottom_5">Results 1 - 5 of 45</p>--}}
+                    {{--<p class="d_inline_middle f_size_medium m_left_5">items per page</p>--}}
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-4 t_align_r t_xs_align_l">
                     <!--pagination-->

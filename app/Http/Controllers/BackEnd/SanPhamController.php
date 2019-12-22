@@ -54,6 +54,7 @@ class SanPhamController extends Controller
         $sanpham->BaoHanh = Input::get('BaoHanh');
         $sanpham->GiaoHang = Input::get('GiaoHang');
         $sanpham->NhaSanXuat = Input::get('NhaSanXuat');
+        $sanpham->Xem = Input::get('Xem');
         $sanpham->Slug = str_slug(Input::get('Name'));
         $sanpham->save();
         if (Input::hasFile('Image')) {
@@ -79,6 +80,7 @@ class SanPhamController extends Controller
         $sanpham->GiaoHang = Input::get('GiaoHang');
         $sanpham->NhaSanXuat = Input::get('NhaSanXuat');
         $sanpham->Slug = str_slug(Input::get('Name'));
+        $sanpham->Xem = Input::get('Xem');
         $sanpham->save();
         if (Input::hasFile('Image')) {
             foreach (Input::file('Image') as $photo){

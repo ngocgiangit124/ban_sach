@@ -203,7 +203,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button class="button_type_6 bg_scheme_color f_size_large r_corners tr_all_hover color_light m_bottom_20 confirm_purchase">Confirm Purchase</button>
+                        <button class="button_type_6 bg_scheme_color f_size_large r_corners tr_all_hover color_light m_bottom_20 confirm_purchase">Xác nhận mua hàng</button>
                     </td>
                 </tr>
             </table>
@@ -213,141 +213,30 @@
             <!--widgets-->
             <figure class="widget shadow r_corners wrapper m_bottom_30">
                 <figcaption>
-                    <h3 class="color_light">Categories</h3>
+                    <h3 class="color_light">Danh mục</h3>
                 </figcaption>
                 <div class="widget_content">
                     <!--Categories list-->
                     <ul class="categories_list">
-                        <li class="active">
-                            <a href="#" class="f_size_large scheme_color d_block relative">
-                                <b>Women</b>
-                                <span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                            </a>
-                            <!--second level-->
-                            <ul>
-                                <li class="active">
-                                    <a href="#" class="d_block f_size_large color_dark relative">
-                                        Dresses<span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                                    </a>
-                                    <!--third level-->
-                                    <ul>
-                                        <li><a href="#" class="color_dark d_block">Evening Dresses</a></li>
-                                        <li><a href="#" class="color_dark d_block">Casual Dresses</a></li>
-                                        <li><a href="#" class="color_dark d_block">Party Dresses</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#" class="d_block f_size_large color_dark relative">
-                                        Accessories<span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d_block f_size_large color_dark relative">
-                                        Tops<span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="f_size_large color_dark d_block relative">
-                                <b>Men</b>
-                                <span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                            </a>
-                            <!--second level-->
-                            <ul class="d_none">
-                                <li>
-                                    <a href="#" class="d_block f_size_large color_dark relative">
-                                        Shorts<span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                                    </a>
-                                    <!--third level-->
-                                    <ul class="d_none">
-                                        <li><a href="#" class="color_dark d_block">Evening</a></li>
-                                        <li><a href="#" class="color_dark d_block">Casual</a></li>
-                                        <li><a href="#" class="color_dark d_block">Party</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="f_size_large color_dark d_block relative">
-                                <b>Kids</b>
-                                <span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                            </a>
-                        </li>
+                        @foreach($danhmuc_theloais as $danhmuc_theloai)
+                            <li class="">
+                                <a href="/theloai/{{$danhmuc_theloai['Slug']}}/sanpham" class="f_size_large scheme_color d_block relative">
+                                    <b>{{$danhmuc_theloai['Name']}}</b>
+                                </a>
+                                <!--second level-->
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </figure>
+            <!--compare products-->
             <!--banner-->
             <a href="#" class="d_block r_corners m_bottom_30">
                 <img src="/front/images/banner_img_6.jpg" alt="">
             </a>
-            <!--New products-->
-            <figure class="widget shadow r_corners wrapper m_bottom_30">
-                <figcaption>
-                    <h3 class="color_light">New Products</h3>
-                </figcaption>
-                <div class="widget_content">
-                    <div class="clearfix m_bottom_15">
-                        <img src="/front/images/new_products_img_1.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
-                        <a href="#" class="color_dark d_block m_bottom_5 bt_link">Ut tellus dolor dapibus</a>
-                        <p class="scheme_color">$61.00</p>
-                    </div>
-                    <hr class="m_bottom_15">
-                    <div class="clearfix m_bottom_15">
-                        <img src="/front/images/new_products_img_2.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
-                        <a href="#" class="color_dark d_block m_bottom_5 bt_link">Elementum vel</a>
-                        <p class="scheme_color">$57.00</p>
-                    </div>
-                    <hr class="m_bottom_15">
-                    <div class="clearfix m_bottom_5">
-                        <img src="/front/images/new_products_img_3.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
-                        <a href="#" class="color_dark d_block m_bottom_5 bt_link">Crsus eleifend elit</a>
-                        <p class="scheme_color">$24.00</p>
-                    </div>
-                </div>
-            </figure>
-            <!--Specials-->
-            <figure class="widget shadow r_corners wrapper m_bottom_30">
-                <figcaption class="clearfix relative">
-                    <h3 class="color_light f_left f_sm_none m_sm_bottom_10 m_xs_bottom_0">Specials</h3>
-                    <div class="f_right nav_buttons_wrap_type_2 tf_sm_none f_sm_none clearfix">
-                        <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large color_light t_align_c bg_tr f_left tr_delay_hover r_corners sc_prev"><i class="fa fa-angle-left"></i></button>
-                        <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large color_light t_align_c bg_tr f_left m_left_5 tr_delay_hover r_corners sc_next"><i class="fa fa-angle-right"></i></button>
-                    </div>
-                </figcaption>
-                <div class="widget_content">
-                    <div class="specials_carousel">
-                        <!--carousel item-->
-                        <div class="specials_item">
-                            <a href="#" class="d_block d_xs_inline_b wrapper m_bottom_20">
-                                <img class="tr_all_long_hover" src="/front/images/product_img_6.jpg" alt="">
-                            </a>
-                            <h5 class="m_bottom_10"><a href="#" class="color_dark">Aliquam erat volutpat</a></h5>
-                            <p class="f_size_large m_bottom_15"><s>$79.00</s> <span class="scheme_color">$36.00</span></p>
-                            <button class="button_type_4 mw_sm_0 r_corners color_light bg_scheme_color tr_all_hover m_bottom_5">Add to Cart</button>
-                        </div>
-                        <!--carousel item-->
-                        <div class="specials_item">
-                            <a href="#" class="d_block d_xs_inline_b wrapper m_bottom_20">
-                                <img class="tr_all_long_hover" src="/front/images/product_img_7.jpg" alt="">
-                            </a>
-                            <h5 class="m_bottom_10"><a href="#" class="color_dark">Integer rutrum ante </a></h5>
-                            <p class="f_size_large m_bottom_15"><s>$79.00</s> <span class="scheme_color">$36.00</span></p>
-                            <button class="button_type_4 mw_sm_0 r_corners color_light bg_scheme_color tr_all_hover m_bottom_5">Add to Cart</button>
-                        </div>
-                        <!--carousel item-->
-                        <div class="specials_item">
-                            <a href="#" class="d_block d_xs_inline_b wrapper m_bottom_20">
-                                <img class="tr_all_long_hover" src="/front/images/product_img_5.jpg" alt="">
-                            </a>
-                            <h5 class="m_bottom_10"><a href="#" class="color_dark">Aliquam erat volutpat</a></h5>
-                            <p class="f_size_large m_bottom_15"><s>$79.00</s> <span class="scheme_color">$36.00</span></p>
-                            <button class="button_type_4 mw_sm_0 r_corners color_light bg_scheme_color tr_all_hover m_bottom_5">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </figure>
+            <!--Bestsellers-->
         </aside>
+
     </div>
 
 

@@ -84,7 +84,7 @@
     <div class="clearfix">
         <ul class="horizontal_list clearfix tt_uppercase isotope_menu f_size_ex_large f_left f_xs_none m_xs_bottom_15" data-carousel-filter=".wfilter_carousel">
 
-            <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover box_s_none" data-filter="*">All</button></li>
+            <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover box_s_none" data-filter="*">Tất cả</button></li>
             @foreach($theloais as $index=>$theloai)
             <li class=" m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover box_s_none" data-filter="filter_class_{{$theloai['Id']}}">{{$theloai['Name']}}</button></li>
             @endforeach
@@ -109,7 +109,7 @@
             <figcaption>
                 <h5 class="m_bottom_10"><a href="#" class="color_dark ellipsis">{{$sanpham['Name']}}</a></h5>
                 <div class="clearfix">
-                    <p class="scheme_color f_left f_size_large m_bottom_15">VNĐ {{$sanpham['Price']}}</p>
+                    <p class="scheme_color f_left f_size_large m_bottom_15">VNĐ {{number_format($sanpham['Price'])}}</p>
                     <!--rating-->
                     <ul class="horizontal_list f_right clearfix rating_list tr_all_hover">
                         <li class="active">
@@ -134,7 +134,7 @@
                         </li>
                     </ul>
                 </div>
-                <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0  add-cart" data-id="{{$sanpham['Id']}}">Add to Cart</button>
+                <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0  add-cart" data-id="{{$sanpham['Id']}}">Thêm vào giỏ hàng</button>
             </figcaption>
         </figure>
         @endforeach
@@ -236,7 +236,7 @@
             <figcaption>
                 <h5 class="m_bottom_10"><a href="#" class="color_dark ellipsis">{{$sanphamRandom['Name']}}</a></h5>
                 <div class="clearfix">
-                    <p class="scheme_color f_left f_size_large m_bottom_15">VNĐ {{$sanphamRandom['Price']}}</p>
+                    <p class="scheme_color f_left f_size_large m_bottom_15">VNĐ {{ number_format($sanphamRandom['Price'])}}</p>
                     <!--rating-->
                     <ul class="horizontal_list f_right clearfix rating_list tr_all_hover">
                         <li class="active">
@@ -261,7 +261,7 @@
                         </li>
                     </ul>
                 </div>
-                <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 add-cart" data-id="{{$sanphamRandom['Id']}}">Add to Cart</button>
+                <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 add-cart" data-id="{{$sanphamRandom['Id']}}">Thêm vào giỏ hàng</button>
             </figcaption>
         </figure>
         @endforeach

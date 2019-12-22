@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Models\About;
+use App\Models\BaoCao;
+//use App\Models\Report;
 use App\Models\SanPham;
 use App\Models\User;
 use App\Repositories\BinhLuanRepository;
@@ -114,6 +116,9 @@ class HomeController extends Controller
         $this->data['user'] = $rels['data'];
         return back()->with('status', 'tru');
     }
+    public function getRegistration() {
+        return view('front.users.detail',$this->data);
+    }
     public function registration() {
         $users = new User();
         $users->Ten = Input::get('Name');
@@ -124,6 +129,19 @@ class HomeController extends Controller
         $users->Password = bcrypt(Input::get('Password'));
         $users->save();
         return redirect('/');
+    }
+    public function update() {
+        $users = Auth::user();
+        $users->Ten = Input::get('Name');
+        $users->Email = Input::get('Email');
+        $users->SDT = Input::get('Phone');
+        $users->DiaChi = Input::get('Address');
+//        $users->Quyen = 'kh';
+        if(Input::get('Password')) {
+            $users->Password = bcrypt(Input::get('Password'));
+        }
+        $users->save();
+        return back();
     }
     public function search() {
 
@@ -144,5 +162,14 @@ class HomeController extends Controller
         $this->data['sanphams'] = $data;
         $this->data['paginate'] = $res;
         return view('front.sanpham.full_index',$this->data);
+    }
+
+    public function report() {
+        $report = new BaoCao();
+        $report->Ten = Input::get('cf_name');
+        $report->Email = Input::get('cf_email');
+        $report->BaoCao= Input::get('cf_message');
+        $report->save();
+        return back();
     }
 }

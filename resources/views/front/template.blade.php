@@ -336,13 +336,14 @@
     <li class="relative">
         <button class="sw_button t_align_c contact"><i class="fa fa-envelope-o"></i></button>
         <div class="sw_content">
-            <h3 class="color_dark m_bottom_20">Contact Us</h3>
-            <p class="f_size_medium m_bottom_15">Lorem ipsum dolor sit amet, consectetuer adipis mauris</p>
-            <form id="contactform" class="mini">
-                <input class="f_size_medium m_bottom_10 r_corners full_width" type="text" name="cf_name" placeholder="Your name">
-                <input class="f_size_medium m_bottom_10 r_corners full_width" type="email" name="cf_email" placeholder="Email">
-                <textarea class="f_size_medium r_corners full_width m_bottom_20" placeholder="Message" name="cf_message"></textarea>
-                <button type="submit" class="button_type_4 r_corners mw_0 tr_all_hover color_dark bg_light_color_2">Send</button>
+            <h3 class="color_dark m_bottom_20">Liên hệ với chúng tôi</h3>
+            <p class="f_size_medium m_bottom_15">Hãy cho chúng tôi biết ý kiến cửa bạn về sản phẩm</p>
+            <form id="" class="mini" action="/report" method="post">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <input class="f_size_medium m_bottom_10 r_corners full_width" type="text" name="cf_name" required placeholder="Tên bạn">
+                <input class="f_size_medium m_bottom_10 r_corners full_width" type="email" name="cf_email" required placeholder="Email">
+                <textarea class="f_size_medium r_corners full_width m_bottom_20" placeholder="Lời nhắn" name="cf_message" required maxlength="300"></textarea>
+                <button type="submit" class="button_type_4 r_corners mw_0 tr_all_hover color_dark bg_light_color_2">Gửi</button>
             </form>
         </div>
     </li>

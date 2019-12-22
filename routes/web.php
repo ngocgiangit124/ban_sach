@@ -21,7 +21,7 @@ Route::get('/admin/login', ['as' => 'login', 'uses' => 'BackEnd\HomeController@g
 Route::get('/admin/logout','BackEnd\HomeController@logout');
 Route::post('/admin/login','BackEnd\HomeController@postLogin');
 
-Route::get('/contact','BackEnd\HomeController@logout');
+//Route::get('/contact','BackEnd\HomeController@logout');
 
 
 Route::get('/pdf','BackEnd\HomeController@pdf');
@@ -58,6 +58,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::resource('gioithieu','BackEnd\GioiThieuController');
 
 });
+Route::post('/report','FrontEnd\HomeController@report');
 Route::get('/logout','FrontEnd\HomeController@logout');
 Route::get('/', 'FrontEnd\HomeController@index');
 Route::get('/contact','FrontEnd\HomeController@contact');
@@ -67,7 +68,9 @@ Route::get('/theloai/{Slug}/sanpham','FrontEnd\TheLoaiController@show');
 Route::get('/sanphams/{Slug}','FrontEnd\SanPhamController@show');
 Route::get('/login', 'FrontEnd\HomeController@login');
 Route::post('/login', 'FrontEnd\HomeController@postLogin');
+Route::get('/registration','FrontEnd\HomeController@getRegistration');
 Route::post('/registration','FrontEnd\HomeController@registration');
+Route::post('/user/update','FrontEnd\HomeController@update');
 Route::get('/tintuc','FrontEnd\TinTucController@index');
 Route::get('/tintuc/{id}','FrontEnd\TinTucController@show');
 

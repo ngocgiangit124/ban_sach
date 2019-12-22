@@ -64,6 +64,7 @@ class SanPham extends Model
             "TheLoaiId" => $this->TheLoaiId,
             "Photo" => $this -> onePhoto(),
             "Photos" => $this -> listPhoto(),
+            "Xem" => $this -> Xem,
             "Created_at"  =>date('d-m-Y H:i', strtotime($this->Created_at)),
             "SameProduct" => $this -> listProduct(),
             "Comments"=> $this -> listComment(),
