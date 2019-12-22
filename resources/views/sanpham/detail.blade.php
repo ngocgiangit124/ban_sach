@@ -31,7 +31,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <form method="post" action="/admin/sanpham/{{$sanpham['Id']}}/update" enctype="multipart/form-data">
+                <form method="post" id="form-spec" action="/admin/sanpham/{{$sanpham['Id']}}/update" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <!-- START panel-->
                     <div class="panel panel-default">
@@ -107,6 +107,113 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class=" control-label">Xem</label>
+                                <div class="col-sm-12">
+                                    <div class="btn-toolbar btn-editor" data-role="editor-toolbar" data-target="#editor">
+                                        <div class="btn-group dropdown">
+                                            <a class="btn btn-default" data-toggle="dropdown" title="Font">
+                                                <em class="fa fa-font"></em><b class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="" data-edit="fontName Arial" style="font-family:'Arial';">Arial</a>
+                                                </li>
+                                                <li><a href="" data-edit="fontName Sans" style="font-family:'Sans';">Sans</a>
+                                                </li>
+                                                <li><a href="" data-edit="fontName Serif" style="font-family:'Serif';">Serif</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group dropdown">
+                                            <a class="btn btn-default" data-toggle="dropdown" title="Font Size">
+                                                <em class="fa fa-text-height"></em>&nbsp;<b class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="" data-edit="fontSize 5" style="font-size:24px;">Huge</a>
+                                                </li>
+                                                <li><a href="" data-edit="fontSize 3" style="font-size:18px;">Normal</a>
+                                                </li>
+                                                <li><a href="" data-edit="fontSize 1" style="font-size:14px;">Small</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a class="btn btn-default" data-edit="bold" data-toggle="tooltip" title="Bold (Ctrl/Cmd+B)">
+                                                <em class="fa fa-bold"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="italic" data-toggle="tooltip" title="Italic (Ctrl/Cmd+I)">
+                                                <em class="fa fa-italic"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="strikethrough" data-toggle="tooltip" title="Strikethrough">
+                                                <em class="fa fa-strikethrough"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="underline" data-toggle="tooltip" title="Underline (Ctrl/Cmd+U)">
+                                                <em class="fa fa-underline"></em>
+                                            </a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a class="btn btn-default" data-edit="insertunorderedlist" data-toggle="tooltip" title="Bullet list">
+                                                <em class="fa fa-list-ul"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="insertorderedlist" data-toggle="tooltip" title="Number list">
+                                                <em class="fa fa-list-ol"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="outdent" data-toggle="tooltip" title="Reduce indent (Shift+Tab)">
+                                                <em class="fa fa-dedent"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="indent" data-toggle="tooltip" title="Indent (Tab)">
+                                                <em class="fa fa-indent"></em>
+                                            </a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a class="btn btn-default" data-edit="justifyleft" data-toggle="tooltip" title="Align Left (Ctrl/Cmd+L)">
+                                                <em class="fa fa-align-left"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="justifycenter" data-toggle="tooltip" title="Center (Ctrl/Cmd+E)">
+                                                <em class="fa fa-align-center"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="justifyright" data-toggle="tooltip" title="Align Right (Ctrl/Cmd+R)">
+                                                <em class="fa fa-align-right"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="justifyfull" data-toggle="tooltip" title="Justify (Ctrl/Cmd+J)">
+                                                <em class="fa fa-align-justify"></em>
+                                            </a>
+                                        </div>
+                                        <div class="btn-group dropdown">
+                                            <a class="btn btn-default" data-toggle="dropdown" title="Hyperlink">
+                                                <em class="fa fa-link"></em>
+                                            </a>
+                                            <div class="dropdown-menu">
+                                                <div class="input-group ml-xs mr-xs">
+                                                    <input class="form-control input-sm" id="LinkInput" placeholder="URL" type="text" data-edit="createLink">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-sm btn-default" type="button">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="btn btn-default" data-edit="unlink" data-toggle="tooltip" title="Remove Hyperlink">
+                                                <em class="fa fa-cut"></em>
+                                            </a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a class="btn btn-default" id="pictureBtn" data-toggle="tooltip" title="Insert picture (or just drag &amp; drop)">
+                                                <em class="fa fa-picture-o"></em>
+                                            </a>
+                                            <input type="file" data-edit="insertImage" style="position:absolute; opacity:0; width:41px; height:34px;">
+                                        </div>
+                                        <div class="btn-group pull-right">
+                                            <a class="btn btn-default" data-edit="undo" data-toggle="tooltip" title="Undo (Ctrl/Cmd+Z)">
+                                                <em class="fa fa-undo"></em>
+                                            </a>
+                                            <a class="btn btn-default" data-edit="redo" data-toggle="tooltip" title="Redo (Ctrl/Cmd+Y)">
+                                                <em class="fa fa-repeat"></em>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="form-control wysiwyg mt-lg input-show-spec" style="overflow:scroll; height:300px;max-height:500px;">{!! $sanpham['Xem'] !!}</div>
+                                    <input type="hidden" class="input-hidden-spec" name="Xem" value="{{$sanpham['Xem']}}">
+                                </div>
+                            </div>
                         </div>
                         <div class="panel-footer">
                             <div class="clearfix">
@@ -119,7 +226,8 @@
                                     </div>
                                 </div>
                                 <div class="pull-right">
-                                    <button class="btn btn-primary" type="submit">Cập nhật</button>
+                                    <button class="btn btn-primary submit-spec" type="button">Tạo mới</button>
+
                                 </div>
                             </div>
                         </div>
@@ -200,7 +308,19 @@
                     }
                 });
 
+
             });
+
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.submit-spec').click(function () {
+                var show = $('.input-show-spec').html();
+                $('.input-hidden-spec').val(show);
+                $('#form-spec').submit();
+            });
+
         });
     </script>
 @stop

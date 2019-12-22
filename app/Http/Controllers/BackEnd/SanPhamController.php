@@ -21,8 +21,10 @@ class SanPhamController extends Controller
     }
 
     public function listSanPham($slug) {
-        $theloai = TheLoai::where('TheLoai.Slug','=',$slug)->orWhere('TheLoai.TheLoaiId','=',$slug)->first();
-        $sanphams = $theloai->sanphams;
+        $theloai = TheLoai::where('TheLoai.Slug','=',$slug)
+            ->orWhere('TheLoai.TheLoaiId','=',$slug)
+            ->first();
+        $sanphams = $theloai->sanphams()->orderBy('SanPhamId','desc')->get();
         $theloai1 = $theloai->getArrayInfo();
         $data = [];
         foreach ($sanphams as $sanpham) {
@@ -40,6 +42,7 @@ class SanPhamController extends Controller
         return view('sanpham/add',$this->data);
     }
     public function store() {
+//        dd(Input::all());
         $sanpham = new SanPham();
         $sanpham->TheLoaiId = Input::get('TheLoaiId');
         $sanpham->Gia = Input::get('Price');
@@ -57,6 +60,7 @@ class SanPhamController extends Controller
         $sanpham->Xem = Input::get('Xem');
         $sanpham->Slug = str_slug(Input::get('Name'));
         $sanpham->save();
+
         if (Input::hasFile('Image')) {
             foreach (Input::file('Image') as $photo){
                 $this->uploadImage($photo,$sanpham);

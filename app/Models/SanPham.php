@@ -39,6 +39,7 @@ class SanPham extends Model
             "Photo" => $this -> onePhoto(),
             "Photos" => $this -> listPhoto(),
             "Created_at"  =>date('d-m-Y H:i', strtotime($this->Created_at)),
+            "Xem"   =>$this->Xem,
         );
         return $rels;
     }
@@ -68,6 +69,7 @@ class SanPham extends Model
             "Created_at"  =>date('d-m-Y H:i', strtotime($this->Created_at)),
             "SameProduct" => $this -> listProduct(),
             "Comments"=> $this -> listComment(),
+
         );
         return $rels;
     }
