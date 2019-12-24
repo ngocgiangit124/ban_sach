@@ -4,7 +4,9 @@
 @stop
 @section('css')
     <style type="text/css">
-
+        .animate_ftr {
+            visibility:hidden!important;
+        }
     </style>
 @stop
 @section('slider')
@@ -193,9 +195,9 @@
             </div>
             <!--testimonials carousel-->
             <div class="testiomials_carousel">
-                @foreach($binhluans as $binhluan)
-                <div class="spec">
-                    <blockquote class="spec-blockquote r_corners shadow f_size_large relative m_bottom_15 animate_ftr">{{$binhluan['Comment']}}</blockquote>
+                @foreach($binhluans as $index=>$binhluan)
+                <div class="">
+                    <blockquote class="spec-blockquote r_corners shadow f_size_large relative m_bottom_15 {{$index==0?"animate_ftr":""}} ">{{$binhluan['Comment']}}</blockquote>
                     <img class="circle m_left_20 d_inline_middle animate_ftr" src="/front/images/testimonial_img_1.jpg" alt="">
                     <div class="d_inline_middle m_left_15 animate_ftr">
                         <h5 class="color_dark"><b>{{$binhluan['UserName']}}</b></h5>
@@ -203,14 +205,14 @@
                     </div>
                 </div>
                 @endforeach
-                <div>
-                    <blockquote class="r_corners shadow f_size_large relative m_bottom_15">Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque.</blockquote>
-                    <img class="circle m_left_20 d_inline_middle" src="/front/images/testimonial_img_2.jpg" alt="">
-                    <div class="d_inline_middle m_left_15">
-                        <h5 class="color_dark"><b>Alan Smith</b></h5>
-                        <p>New York</p>
-                    </div>
-                </div>
+                {{--<div>--}}
+                    {{--<blockquote class="r_corners shadow f_size_large relative m_bottom_15">Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque.</blockquote>--}}
+                    {{--<img class="circle m_left_20 d_inline_middle" src="/front/images/testimonial_img_2.jpg" alt="">--}}
+                    {{--<div class="d_inline_middle m_left_15">--}}
+                        {{--<h5 class="color_dark"><b>Alan Smith</b></h5>--}}
+                        {{--<p>New York</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>

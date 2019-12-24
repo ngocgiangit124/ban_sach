@@ -18,11 +18,20 @@ class About extends Model
         $rels = array(
             "Id"   => $this->Id,
             "Description"      => $this->Mota,
+            "DescriptionShort"      => $this->getContentShort(),
             "Slug"      => $this->Slug,
             "Created_at"  =>date('d-m-Y H:i', strtotime($this->Created_at)),
             "Photos" =>$this-> getPhoto(),
         );
         return $rels;
+    }
+    public function getContentShort() {
+        if(strlen(''.$this->Mota)>300){
+            $content = strip_tags($this->Mota);
+            return substr($content,0,300).' ...';
+        } else {
+            return  strip_tags($this->Mota);
+        }
     }
     function getPhoto() {
         $data = [];

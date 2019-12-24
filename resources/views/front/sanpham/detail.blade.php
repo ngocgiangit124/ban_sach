@@ -255,7 +255,7 @@
                 </div>
             </div>
             <div id="tab-4">
-              {{$sanpham['Xem']}}
+              {!! $sanpham['Xem'] !!}
             </div>
         </section>
     </div>

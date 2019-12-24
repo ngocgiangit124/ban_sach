@@ -42,7 +42,7 @@
                                     <td>{{$tintuc['Id']}}</td>
                                     {{--<td>{{$tintuc['Name']}}</td>--}}
                                     <td><img src="{{$tintuc['Photos']['Small']}}" alt=""></td>
-                                    <td>{{$tintuc['Description']}}</td>
+                                    <td>{{$tintuc['DescriptionShort']}}</td>
                                     <td><a href="/admin/gioithieu/{{$tintuc['Id']}}/edit">Edit</a></td>
                                     <td><a href="javascript:" class="swal-demo5"  data-id="{{$tintuc['Id']}}">Delete</a></td>
                                 </tr>
