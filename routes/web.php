@@ -84,6 +84,7 @@ Route::post('/cart','FrontEnd\CartController@buy');
 Route::post('/add-cart-data','FrontEnd\CartController@data');
 Route::post('/comments','FrontEnd\SanPhamController@storeComment');
 Route::get('/payment','FrontEnd\CartController@payment');
+Route::get('/my-profile','FrontEnd\HomeController@getRegistration');
 
 
 Route::get('/view-quick','FrontEnd\SanPhamController@viewQuick');

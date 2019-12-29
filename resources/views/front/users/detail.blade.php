@@ -159,6 +159,35 @@
             @endif
         </section>
         <!--right column-->
+        <section class="col-lg-9 col-md-9 col-sm-9 m_xs_bottom_30">
+            <div class="container" style="background: #ffffff;padding: 20px;text-align: center">
+                <h2>Danh sách hóa đơn</h2>
+                <table class="table" style="width: 100%;padding: 10px">
+                    <thead style="width: 100%;padding: 10px">
+                    <tr style="margin: 15px">
+                        <th style="width: 5%">Stt</th>
+                        <th style="width: 15%">Mã hóa đơn</th>
+                        <th style="width: 15%">Số lượng</th>
+                        <th style="width: 15%">Tổng tiền</th>
+                        <th style="width: 15%">Thời gian</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($orders as $index =>$order)
+                        <tr>
+                            <td>{{$index+1}}</td>
+                            <td>{{$order['Code']}}</td>
+                            <td>{{$order['Amount']}}</td>
+                            <td>{{number_format($order['Total'])}} VNĐ</td>
+                            <td>{{$order['Created_at']}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
         </div>
 
 

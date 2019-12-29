@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontEnd;
 use App\Models\About;
 use App\Models\BaoCao;
 //use App\Models\Report;
+use App\Models\HoaDon;
 use App\Models\SanPham;
 use App\Models\User;
 use App\Repositories\BinhLuanRepository;
@@ -15,7 +16,7 @@ use App\Repositories\TinTucRepository;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller
@@ -117,6 +118,17 @@ class HomeController extends Controller
         return back()->with('status', 'tru');
     }
     public function getRegistration() {
+        $auth = Auth::user();
+        if($auth) {
+            $orders = HoaDon::where('NguoiDungId',$auth->NguoiDungId)->paginate(100);
+        } else {
+            $orders = [];
+        }
+        $data = [];
+        foreach ($orders as $order) {
+            $data[] = $order->getArrayInfo();
+        }
+        $this->data['orders'] = $data;
         return view('front.users.detail',$this->data);
     }
     public function registration() {

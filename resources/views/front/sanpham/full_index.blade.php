@@ -100,7 +100,7 @@
             <!--widgets-->
             <figure class="widget shadow r_corners wrapper m_bottom_30">
                 <figcaption>
-                    <h3 class="color_light">Categories</h3>
+                    <h3 class="color_light">Danh mục</h3>
                 </figcaption>
                 <div class="widget_content">
                     <!--Categories list-->

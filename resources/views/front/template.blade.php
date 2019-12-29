@@ -57,7 +57,7 @@
                                     {{--Đăng nhập--}}
                                 {{--</a>--}}
                             @else
-                                <li><a href="#" class="default_t_color"> {{$auth->Ten}}</a></li>
+                                <li><a href="/my-profile" class="default_t_color"> {{$auth->Ten}}</a></li>
                                 <li><a href="/logout" class="default_t_color"> Đăng xuất</a></li>
                             @endif
                             <li><a href="/cart" class="default_t_color">Thanh toán</a></li>
