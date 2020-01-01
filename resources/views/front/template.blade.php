@@ -16,8 +16,9 @@
     <link rel="stylesheet" type="text/css" media="all" href="/front/css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" media="all" href="/front/css/owl.transitions.css">
     <link rel="stylesheet" type="text/css" media="all" href="/front/css/jquery.custom-scrollbar.css">
-    <link rel="stylesheet" type="text/css" media="all" href="/front/css/style.css?v=1">
+    <link rel="stylesheet" type="text/css" media="all" href="/front/css/style.css?v=1.1">
     <!--font include-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
     <link href="/front/css/font-awesome.min.css" rel="stylesheet">
     <script src="/front/js/modernizr.js"></script>
     <style type="text/css">

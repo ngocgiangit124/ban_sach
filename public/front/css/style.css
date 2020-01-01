@@ -20,7 +20,7 @@
 	19. Retina ready
 -------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,700,500,300italic);
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,800,900);
 @import "styleswitcher.css";
 
 /* -----------------------------------
@@ -89,7 +89,7 @@ html,body{
 ------------------------------------- */
 
 body{
-	font:300 14px/21px 'Raleway', sans-serif;
+	font:300 14px/21px 'Roboto', sans-serif;
 	color:#555;
 	background:#fff;
 	letter-spacing: 0.1px;

@@ -14,34 +14,10 @@
                 <div class="row clearfix m_bottom_15">
                     <div class="col-lg-9 col-md-9 col-sm-8">
                         <h2 class="m_bottom_5 color_dark fw_medium m_xs_bottom_10">{{$news['Name']}}</h2>
-                        <p class="f_size_medium">{{$news['Created_at']}}, <a href="#" class="color_dark">12 comments</a>, on <a href="#" class="color_dark">Fashion</a></p>
+                        <p class="f_size_medium">{{$news['Created_at']}}, <a href="#" class="color_dark"></a></p>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-4 t_align_r t_xs_align_l">
-                        <p class="f_size_medium d_xs_inline_middle">Rate this item</p>
                         <!--rating-->
-                        <ul class="horizontal_list d_inline_middle type_2 clearfix rating_list tr_all_hover">
-                            <li class="active">
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                        </ul>
-                        <a href="#" class="d_inline_middle f_size_medium default_t_color m_left_5">(1 Vote)</a>
                     </div>
                 </div>
                 <a href="#" class="d_block photoframe r_corners wrapper shadow m_bottom_15">
@@ -53,7 +29,7 @@
                 </p>
             </article>
             <div class="m_bottom_30">
-                <p class="d_inline_middle">Share this:</p>
+                <p class="d_inline_middle">Chia sẻ:</p>
                 <div class="d_inline_middle m_left_5 addthis_widget_container">
                     <!-- AddThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
@@ -89,28 +65,6 @@
                         <img src="/front/images/bestsellers_img_1.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
                         <a href="#" class="color_dark d_block bt_link">Ut tellus dolor dapibus</a>
                         <!--rating-->
-                        <ul class="horizontal_list clearfix d_inline_b rating_list type_2 tr_all_hover m_bottom_10">
-                            <li class="active">
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star-o empty tr_all_hover"></i>
-                                <i class="fa fa-star active tr_all_hover"></i>
-                            </li>
-                        </ul>
                         <p class="scheme_color">$61.00</p>
                     </div>
                     <hr class="m_bottom_15">
@@ -174,30 +128,6 @@
                 </div>
             </figure>
             <!--Latest articles-->
-            <figure class="widget shadow r_corners wrapper m_bottom_30">
-                <figcaption>
-                    <h3 class="color_light">Latest Articles</h3>
-                </figcaption>
-                <div class="widget_content">
-                    <article class="clearfix m_bottom_15">
-                        <img src="/front/images/article_img_4.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
-                        <a href="#" class="color_dark d_block bt_link p_vr_0">Aliquam erat volutpat.</a>
-                        <p class="f_size_medium">25 January, 2013</p>
-                    </article>
-                    <hr class="m_bottom_15">
-                    <article class="clearfix m_bottom_15">
-                        <img src="/front/images/article_img_5.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
-                        <a href="#" class="color_dark d_block p_vr_0 bt_link">Integer rutrum ante </a>
-                        <p class="f_size_medium">21 January, 2013</p>
-                    </article>
-                    <hr class="m_bottom_15">
-                    <article class="clearfix m_bottom_5">
-                        <img src="/front/images/article_img_6.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
-                        <a href="#" class="color_dark d_block p_vr_0 bt_link">Vestibulum libero nisl, porta vel</a>
-                        <p class="f_size_medium">18 January, 2013</p>
-                    </article>
-                </div>
-            </figure>
             <!--tags-->
         </aside>
     </div>

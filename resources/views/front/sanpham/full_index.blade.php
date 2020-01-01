@@ -47,28 +47,6 @@
                             <figcaption>
                                 <h5 class="m_bottom_10"><a href="#" class="color_dark">{{$sanpham['Name']}}</a></h5>
                                 <!--rating-->
-                                <ul class="horizontal_list d_inline_b m_bottom_10 clearfix rating_list type_2 tr_all_hover">
-                                    <li class="active">
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                    <li class="active">
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                    <li class="active">
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                    <li class="active">
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                </ul>
                                 <p class="scheme_color f_size_large m_bottom_15">VNĐ {{$sanpham['Price']}}</p>
                                 <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15  add-cart" data-id="{{$sanpham['Id']}}">Thêm vào giỏ hàng</button>
                             </figcaption>

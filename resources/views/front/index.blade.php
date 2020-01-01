@@ -113,28 +113,6 @@
                 <div class="clearfix">
                     <p class="scheme_color f_left f_size_large m_bottom_15">VNĐ {{number_format($sanpham['Price'])}}</p>
                     <!--rating-->
-                    <ul class="horizontal_list f_right clearfix rating_list tr_all_hover">
-                        <li class="active">
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                    </ul>
                 </div>
                 <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0  add-cart" data-id="{{$sanpham['Id']}}">Thêm vào giỏ hàng</button>
             </figcaption>
@@ -240,28 +218,6 @@
                 <div class="clearfix">
                     <p class="scheme_color f_left f_size_large m_bottom_15">VNĐ {{ number_format($sanphamRandom['Price'])}}</p>
                     <!--rating-->
-                    <ul class="horizontal_list f_right clearfix rating_list tr_all_hover">
-                        <li class="active">
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star-o empty tr_all_hover"></i>
-                            <i class="fa fa-star active tr_all_hover"></i>
-                        </li>
-                    </ul>
                 </div>
                 <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 add-cart" data-id="{{$sanphamRandom['Id']}}">Thêm vào giỏ hàng</button>
             </figcaption>

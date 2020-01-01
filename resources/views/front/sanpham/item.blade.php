@@ -49,28 +49,6 @@
     <h2 class="m_bottom_10"><a href="#" class="color_dark fw_medium">{{$sanpham['Name']}}</a></h2>
     <div class="m_bottom_10">
         <!--rating-->
-        <ul class="horizontal_list d_inline_middle type_2 clearfix rating_list tr_all_hover">
-            <li class="active">
-                <i class="fa fa-star-o empty tr_all_hover"></i>
-                <i class="fa fa-star active tr_all_hover"></i>
-            </li>
-            <li class="active">
-                <i class="fa fa-star-o empty tr_all_hover"></i>
-                <i class="fa fa-star active tr_all_hover"></i>
-            </li>
-            <li class="active">
-                <i class="fa fa-star-o empty tr_all_hover"></i>
-                <i class="fa fa-star active tr_all_hover"></i>
-            </li>
-            <li class="active">
-                <i class="fa fa-star-o empty tr_all_hover"></i>
-                <i class="fa fa-star active tr_all_hover"></i>
-            </li>
-            <li>
-                <i class="fa fa-star-o empty tr_all_hover"></i>
-                <i class="fa fa-star active tr_all_hover"></i>
-            </li>
-        </ul>
         <a href="#" class="d_inline_middle default_t_color f_size_small m_left_5">1 Review(s) </a>
     </div>
     <hr class="m_bottom_10 divider_type_3">
