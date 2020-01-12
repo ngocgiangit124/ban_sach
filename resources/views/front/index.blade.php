@@ -84,7 +84,7 @@
     </div>
     <!--filter navigation-->
     <div class="clearfix">
-        <ul class="horizontal_list clearfix tt_uppercase isotope_menu f_size_ex_large f_left f_xs_none m_xs_bottom_15" data-carousel-filter=".wfilter_carousel">
+        <ul style="font-weight: 500" class="horizontal_list clearfix tt_uppercase isotope_menu f_size_ex_large f_left f_xs_none m_xs_bottom_15" data-carousel-filter=".wfilter_carousel">
 
             <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover box_s_none" data-filter="*">Tất cả</button></li>
             @foreach($theloais as $index=>$theloai)

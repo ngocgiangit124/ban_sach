@@ -43,8 +43,12 @@ class SanPhamRepository {
     }
     public function indexRandom() {
         $start = rand(1,100);
-        $sanphams = SanPham::inRandomOrder()
-            ->orderBy('SanPhamId','DESC')
+//        $sanphams = SanPham::inRandomOrder()
+//            ->orderBy('SanPhamId','DESC')
+//            ->paginate(12);
+//        $data = [];
+
+        $sanphams = SanPham::orderBy('SoLuongBan','DESC')
             ->paginate(12);
         $data = [];
         foreach ($sanphams as $sanpham) {
