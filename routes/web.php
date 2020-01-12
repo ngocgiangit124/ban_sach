@@ -30,7 +30,7 @@ Route::get('/pdf1','BackEnd\HomeController@pdf1');
 Route::get('/search','FrontEnd\HomeController@search');
 Route::post('/search','FrontEnd\HomeController@search');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth.simple'], function() {
 
     Route::get('/','BackEnd\NhanVienController@index');
     Route::get('/danhmuc/{Slug}/sanpham', 'BackEnd\SanPhamController@listSanPham');
@@ -66,7 +66,7 @@ Route::get('/about','FrontEnd\HomeController@about');
 Route::get('/sanphams','FrontEnd\SanPhamController@index');
 Route::get('/theloai/{Slug}/sanpham','FrontEnd\TheLoaiController@show');
 Route::get('/sanphams/{Slug}','FrontEnd\SanPhamController@show');
-Route::get('/login', 'FrontEnd\HomeController@login');
+Route::get('/login', 'FrontEnd\HomeController@getRegistration');
 Route::post('/login', 'FrontEnd\HomeController@postLogin');
 Route::get('/registration','FrontEnd\HomeController@getRegistration');
 Route::post('/registration','FrontEnd\HomeController@registration');

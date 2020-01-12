@@ -50,6 +50,7 @@ class SanPhamController extends Controller
         $sanpham->Code = Input::get('Code');
         $sanpham->Ten = Input::get('Name');
         $sanpham->MoTa = Input::get('Description');
+        $sanpham->DanhGia = 5;
 
         $sanpham->ChatLieu = Input::get('ChatLieu');
         $sanpham->KichThuoc = Input::get('KichThuoc');

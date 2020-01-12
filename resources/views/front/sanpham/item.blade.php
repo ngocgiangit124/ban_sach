@@ -81,7 +81,7 @@
     <p class="m_bottom_10">////</p>
     <hr class="divider_type_3 m_bottom_15">
     <div class="m_bottom_15">
-        <span class="v_align_b f_size_big m_left_5 scheme_color fw_medium">VNĐ {{ $sanpham['Price'] }}</span>
+        <span class="v_align_b f_size_big m_left_5 scheme_color fw_medium">{{ $sanpham['Price'] }} VNĐ </span>
     </div>
     <table class="description_table type_2 m_bottom_15">
         {{--<tr>--}}

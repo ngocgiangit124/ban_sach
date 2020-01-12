@@ -49,24 +49,24 @@
             <h2 class="color_dark fw_medium m_bottom_10">{{$sanpham['Name']}}</h2>
             <div class="m_bottom_10">
                 <!--rating-->
-                <ul class="horizontal_list d_inline_middle type_2 clearfix rating_list tr_all_hover">
-                    <li class="active">
+                <ul style="pointer-events: none" class="horizontal_list d_inline_middle type_2 clearfix rating_list tr_all_hover">
+                    <li class="{{$sanpham['Rate']>=1?'active':''}}">
                         <i class="fa fa-star-o empty tr_all_hover"></i>
                         <i class="fa fa-star active tr_all_hover"></i>
                     </li>
-                    <li class="active">
+                    <li class="{{$sanpham['Rate']>=2?'active':''}}">
                         <i class="fa fa-star-o empty tr_all_hover"></i>
                         <i class="fa fa-star active tr_all_hover"></i>
                     </li>
-                    <li class="active">
+                    <li class="{{$sanpham['Rate']>=3?'active':''}}">
                         <i class="fa fa-star-o empty tr_all_hover"></i>
                         <i class="fa fa-star active tr_all_hover"></i>
                     </li>
-                    <li class="active">
+                    <li class="{{$sanpham['Rate']>=4?'active':''}}">
                         <i class="fa fa-star-o empty tr_all_hover"></i>
                         <i class="fa fa-star active tr_all_hover"></i>
                     </li>
-                    <li>
+                    <li class="{{$sanpham['Rate']>=5?'active':''}}">
                         <i class="fa fa-star-o empty tr_all_hover"></i>
                         <i class="fa fa-star active tr_all_hover"></i>
                     </li>
@@ -94,17 +94,17 @@
                     <td>Kích cỡ:</td>
                     <td><span class="color_dark">{{$sanpham['KichThuoc']}}</span></td>
                 </tr>
-                <tr>
-                    <td>Khối lượng:</td>
-                    <td>0,5KG</td>
-                </tr>
+                {{--<tr>--}}
+                    {{--<td>Khối lượng:</td>--}}
+                    {{--<td>0,5KG</td>--}}
+                {{--</tr>--}}
             </table>
             <hr class="divider_type_3 m_bottom_10">
             <p class="m_bottom_10">Nhà Sản Xuất : {{$sanpham['NhaSanXuat']}}, Bảo Hành : {{$sanpham['BaoHanh']}}, Màu sắc : {{$sanpham['MauSac']}} </p>
             <hr class="divider_type_3 m_bottom_15">
             <div class="m_bottom_15">
                 {{--<s class="v_align_b f_size_ex_large">VNĐ {{$sanpham['Price']}}</s>--}}
-                <span class="v_align_b f_size_big m_left_5 scheme_color fw_medium">VNĐ {{number_format($sanpham['Price'])}}</span>
+                <span class="v_align_b f_size_big m_left_5 scheme_color fw_medium">{{number_format($sanpham['Price'])}} VNĐ </span>
             </div>
             <table class="description_table type_2 m_bottom_15">
                 {{--<tr>--}}
@@ -178,24 +178,24 @@
                                 <p class="f_size_medium f_left f_mxs_none m_mxs_bottom_5">Bởi {{$cm['UserName']}} - {{$cm['Created_at']}} </p>
                                 {{--Thursday, 26 December 2013--}}
                                 <!--rating-->
-                                <ul class="horizontal_list f_right f_mxs_none clearfix rating_list type_2">
-                                    <li class="active">
+                                <ul style="pointer-events: none" class="horizontal_list f_right f_mxs_none clearfix rating_list type_2">
+                                    <li class="{{$cm['Rate']>=1?'active':''}}">
                                         <i class="fa fa-star-o empty tr_all_hover"></i>
                                         <i class="fa fa-star active tr_all_hover"></i>
                                     </li>
-                                    <li class="active">
+                                    <li class="{{$cm['Rate']>=2?'active':''}}">
                                         <i class="fa fa-star-o empty tr_all_hover"></i>
                                         <i class="fa fa-star active tr_all_hover"></i>
                                     </li>
-                                    <li class="active">
+                                    <li class="{{$cm['Rate']>=3?'active':''}}">
                                         <i class="fa fa-star-o empty tr_all_hover"></i>
                                         <i class="fa fa-star active tr_all_hover"></i>
                                     </li>
-                                    <li class="active">
+                                    <li class="{{$cm['Rate']>=4?'active':''}}">
                                         <i class="fa fa-star-o empty tr_all_hover"></i>
                                         <i class="fa fa-star active tr_all_hover"></i>
                                     </li>
-                                    <li>
+                                    <li class="{{$cm['Rate']>=5?'active':''}}">
                                         <i class="fa fa-star-o empty tr_all_hover"></i>
                                         <i class="fa fa-star active tr_all_hover"></i>
                                     </li>
@@ -210,7 +210,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         <h5 class="fw_medium m_bottom_15">Viết Đánh Giá</h5>
                         <p class="f_size_medium m_bottom_15">Viết nhận xét của bạn về sản phẩm....( tối đa. 2000 từ)</p>
-                        <form action="/comments" method="post">
+                        <form id="form-cm" action="/comments" method="post">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="Id" value="{{$auth?$auth->NguoiDungId:''}}" />
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -221,7 +221,8 @@
                                 <div class="d_table_cell m_md_bottom_5 v_align_m d_md_block">
                                     <p class="f_size_medium d_inline_middle m_right_5">Số Sao:</p>
                                     <!--rating-->
-                                    <ul class="horizontal_list clearfix rating_list type_2 d_inline_middle">
+                                    <input type="hidden" class="rate-spec" name="Rate" value="5">
+                                    <ul class="horizontal_list clearfix spec-d rating_list type_2 d_inline_middle">
                                         <li class="active">
                                             <i class="fa fa-star-o empty tr_all_hover"></i>
                                             <i class="fa fa-star active tr_all_hover"></i>
@@ -249,7 +250,7 @@
                                     {{--<input type="text" class="r_corners d_inline_middle type_2 m_left_5 m_sm_left_0 m_xs_left_5 mxw_0 small_field" value="0">--}}
                                 {{--</div>--}}
                             </div>
-                            <button type="submit" class="r_corners button_type_4 tr_all_hover mw_0 color_dark bg_light_color_2">Submit</button>
+                            <button type="button" class="spec-btn r_corners button_type_4 tr_all_hover mw_0 color_dark bg_light_color_2">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -281,7 +282,7 @@
                 <h5 class="m_bottom_10"><a href="/sanphams/{{$sanphamRandom['Id']}}" class="color_dark ellipsis">{{$sanphamRandom['Name']}}</a></h5>
 
                 <div class="clearfix">
-                    <p class="scheme_color f_left f_size_large m_bottom_15">VNĐ {{number_format($sanphamRandom['Price'])}}</p>
+                    <p class="scheme_color f_left f_size_large m_bottom_15"> {{number_format($sanphamRandom['Price'])}} VNĐ</p>
                     <!--rating-->
 
                 </div>
@@ -308,4 +309,13 @@
     <script src="/front/js/owl.carousel.min.js"></script>
     <script src="/front/js/jquery.custom-scrollbar.js"></script>
     <script src="/front/js/jquery.fancybox-1.3.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.spec-btn').click(function () {
+                var ee = $('.spec-d.rating_list').children('li.active').length;
+                $('.rate-spec').val(ee);
+                $('#form-cm').submit();
+            });
+        });
+    </script>
 @stop

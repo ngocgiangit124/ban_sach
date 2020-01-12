@@ -40,13 +40,13 @@ class SimpleAuthMiddleware {
    */
   public function handle($request, Closure $next)
   {
-        $username = $request->getUser();
-        $password = $request->getPassword();
-        $rels = $this->user_repository->loginEmail($username, $password);
-        if ($rels['status'] == -1) {
-          return response()->json($rels);
+        $auth = Auth::user();
+        if($auth && $auth->Quyen == "admin") {
+            return $next($request);
         }
-        return $next($request);
-    
+        if($auth && $auth->Quyen != "admin") {
+            return redirect('/404');
+        }
+      return redirect('/admin/login');
   }
 }

@@ -109,10 +109,33 @@
             </a>
             <!--description and price of product-->
             <figcaption>
-                <h5 class="m_bottom_10"><a href="#" class="color_dark ellipsis">{{$sanpham['Name']}}</a></h5>
+                <h5 class="m_bottom_10"><a href="/sanphams/{{$sanpham['Slug']}}" class="color_dark ellipsis">{{$sanpham['Name']}}</a></h5>
                 <div class="clearfix">
-                    <p class="scheme_color f_left f_size_large m_bottom_15">VNĐ {{number_format($sanpham['Price'])}}</p>
+                    <p class="scheme_color f_left f_size_large m_bottom_15"> {{number_format($sanpham['Price'])}} VNĐ</p>
                     <!--rating-->
+                    <ul style="pointer-events: none" class="horizontal_list f_right clearfix rating_list tr_all_hover">
+                        <li class="{{$sanpham['Rate']>=1?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                        <li class="{{$sanpham['Rate']>=2?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                        <li class="{{$sanpham['Rate']>=3?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                        <li class="{{$sanpham['Rate']>=4?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                        <li class="{{$sanpham['Rate']>=5?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                    </ul>
+
                 </div>
                 <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0  add-cart" data-id="{{$sanpham['Id']}}">Thêm vào giỏ hàng</button>
             </figcaption>
@@ -214,10 +237,32 @@
             </a>
             <!--description and price of product-->
             <figcaption>
-                <h5 class="m_bottom_10"><a href="#" class="color_dark ellipsis">{{$sanphamRandom['Name']}}</a></h5>
+                <h5 class="m_bottom_10"><a href="/sanphams/{{$sanpham['Slug']}}" class="color_dark ellipsis">{{$sanphamRandom['Name']}}</a></h5>
                 <div class="clearfix">
-                    <p class="scheme_color f_left f_size_large m_bottom_15">VNĐ {{ number_format($sanphamRandom['Price'])}}</p>
+                    <p class="scheme_color f_left f_size_large m_bottom_15">{{ number_format($sanphamRandom['Price'])}} VNĐ </p>
                     <!--rating-->
+                    <ul style="pointer-events: none" class="horizontal_list f_right clearfix rating_list tr_all_hover">
+                        <li class="{{$sanpham['Rate']>=1?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                        <li class="{{$sanpham['Rate']>=2?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                        <li class="{{$sanpham['Rate']>=3?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                        <li class="{{$sanpham['Rate']>=4?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                        <li class="{{$sanpham['Rate']>=5?'active':''}}">
+                            <i class="fa fa-star-o empty tr_all_hover"></i>
+                            <i class="fa fa-star active tr_all_hover"></i>
+                        </li>
+                    </ul>
                 </div>
                 <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 add-cart" data-id="{{$sanphamRandom['Id']}}">Thêm vào giỏ hàng</button>
             </figcaption>

@@ -22,6 +22,7 @@ class BinhLuan extends Model
             "Id"   => $this->BinhLuanId,
             "Comment"     => $this->BinhLuan,
             "UserName"      => $this->user?$this->user->Ten:'',
+            "Rate"      => $this->DanhGia,
             "ProductName"      => $this->sanpham?$this->sanpham->Ten:'',
             "Created_at"  =>date('d-m-Y H:i', strtotime($this->Created_at)),
         );

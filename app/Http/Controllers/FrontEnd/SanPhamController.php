@@ -80,10 +80,24 @@ class SanPhamController extends Controller
             $cm -> BinhLuan = Input::get('Comment');
             $cm -> SanPhamId = Input::get('ProductId');
             $cm -> NguoiDungId = $user->NguoiDungId;
+            $cm -> DanhGia = Input::get('Rate');
             $cm->save();
+            $this->checkRate($cm -> SanPhamId);
             return back();
         }
         return redirect('/login');
+    }
+    function checkRate($id) {
+        $total =0;$dem =0;
+        $sanpham = SanPham::find($id);
+        $cms = BinhLuan::where('SanphamId',$id)->get();
+
+        foreach ($cms as $cm ) {
+            $total = $total + $cm->DanhGia;
+            $dem++;
+        }
+        $sanpham->DanhGia = round($total/$dem);
+        $sanpham->save();
     }
     public function viewQuick() {
         $sanpham = SanPham::find(Input::get('id'));

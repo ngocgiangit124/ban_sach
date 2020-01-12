@@ -40,6 +40,7 @@ class SanPham extends Model
             "Photos" => $this -> listPhoto(),
             "Created_at"  =>date('d-m-Y H:i', strtotime($this->Created_at)),
             "Xem"   =>$this->Xem,
+            "Rate" => $this->DanhGia,
         );
         return $rels;
     }
@@ -63,6 +64,7 @@ class SanPham extends Model
             "NhaSanXuat" => $this-> NhaSanXuat,
             "TheLoai" => $this-> NameTheloai(),
             "TheLoaiId" => $this->TheLoaiId,
+            "Rate" => $this->DanhGia,
             "Photo" => $this -> onePhoto(),
             "Photos" => $this -> listPhoto(),
             "Xem" => $this -> Xem,
@@ -136,5 +138,6 @@ class SanPham extends Model
     public function comments() {
         return $this->hasMany('App\Models\BinhLuan','SanPhamId','SanPhamId');
     }
-
 }
+//ALTER TABLE `sanpham` ADD `DanhGia` INT(1) NULL AFTER `Xem`;
+//ALTER TABLE `binhluan` ADD `DanhGia` INT(1) NULL AFTER `NguoiDungId`;
